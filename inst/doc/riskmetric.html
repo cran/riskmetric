@@ -12,7 +12,7 @@
 
 <meta name="author" content="R Validation Hub" />
 
-<meta name="date" content="2021-05-11" />
+<meta name="date" content="2021-07-29" />
 
 <title>Get Started</title>
 
@@ -141,7 +141,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 
 <h1 class="title toc-ignore">Get Started</h1>
 <h4 class="author">R Validation Hub</h4>
-<h4 class="date">2021-05-11</h4>
+<h4 class="date">2021-07-29</h4>
 
 
 <div id="TOC">
@@ -221,13 +221,13 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <div class="sourceCode" id="cb1"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(riskmetric)</span>
 <span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a>riskmetric_pkg_ref <span class="ot">&lt;-</span> <span class="fu">pkg_ref</span>(<span class="st">&quot;riskmetric&quot;</span>)</span>
 <span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="fu">print</span>(riskmetric_pkg_ref)</span></code></pre></div>
-<pre><code>#&gt; &lt;pkg_install, pkg_ref&gt; riskmetric v0.1.0
+<pre><code>#&gt; &lt;pkg_install, pkg_ref&gt; riskmetric v0.1.1
 #&gt; $path
-#&gt;   [1] &quot;/home/user/username/R/4.0/Resources/library/riskmetric&quot;
+#&gt;   [1] &quot;/home/user/username/R/4.1/Resources/library/riskmetric&quot;
 #&gt; $source
 #&gt;   [1] &quot;pkg_install&quot;
 #&gt; $version
-#&gt;   [1] &#39;0.1.0&#39;
+#&gt;   [1] &#39;0.1.1&#39;
 #&gt; $name
 #&gt;   [1] &quot;riskmetric&quot;
 #&gt; $bug_reports...
@@ -264,7 +264,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <p>The return type also leaves a trail of what assessment produced this metric. In addition to the <code>pkg_metric</code> class, we now have a <code>pkg_metric_export_help</code> subclass which is used for dispatching to an appropriate scoring method.</p>
 <p>It’s worth pointing out that the act of calling this function has had the side-effect of mutating our <code>riskmetric_pkg_ref</code> object.</p>
 <div class="sourceCode" id="cb5"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a>riskmetric_pkg_ref</span></code></pre></div>
-<pre><code>#&gt; &lt;pkg_install, pkg_ref&gt; riskmetric v0.1.0
+<pre><code>#&gt; &lt;pkg_install, pkg_ref&gt; riskmetric v0.1.1
 #&gt; $help_aliases
 #&gt;                            %||%                        .tools
 #&gt;              &quot;if_not_null_else&quot;                   &quot;dot-tools&quot;
@@ -274,11 +274,11 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 #&gt;   &quot;assessment_error_as_warning&quot;      &quot;assessment_error_empty&quot;
 #&gt;   &lt;continued&gt;
 #&gt; $path
-#&gt;   [1] &quot;/home/user/username/R/4.0/Resources/library/riskmetric&quot;
+#&gt;   [1] &quot;/home/user/username/R/4.1/Resources/library/riskmetric&quot;
 #&gt; $source
 #&gt;   [1] &quot;pkg_install&quot;
 #&gt; $version
-#&gt;   [1] &#39;0.1.0&#39;
+#&gt;   [1] &#39;0.1.1&#39;
 #&gt; $name
 #&gt;   [1] &quot;riskmetric&quot;
 #&gt; $bug_reports...
@@ -321,9 +321,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 #&gt; [1] &quot;https://github.com/pharmaR/riskmetric/issues&quot;
 #&gt; 
 #&gt; $bugs_status
-#&gt;  [1]  TRUE  TRUE FALSE FALSE FALSE  TRUE FALSE FALSE  TRUE FALSE FALSE  TRUE
-#&gt; [13]  TRUE FALSE  TRUE  TRUE FALSE  TRUE  TRUE  TRUE FALSE  TRUE  TRUE FALSE
-#&gt; [25] FALSE  TRUE FALSE  TRUE FALSE  TRUE
+#&gt; &lt;simpleError in FUN(X[[i]], ...): subscript out of bounds&gt;
 #&gt; 
 #&gt; $license
 #&gt; [1] &quot;MIT + file LICENSE&quot;
@@ -361,7 +359,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 #&gt;                        TRUE 
 #&gt; 
 #&gt; $downloads_1yr
-#&gt; [1] 0
+#&gt; [1] 805
 #&gt; 
 #&gt; $has_website
 #&gt; [1] &quot;https://pharmar.github.io/riskmetric/&quot;
@@ -410,7 +408,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <pre><code>#&gt; # A tibble: 1 x 17
 #&gt;   package    version pkg_ref             news_current       has_vignettes     
 #&gt;   &lt;chr&gt;      &lt;chr&gt;   &lt;list&lt;pkg_ref&gt;&gt;     &lt;list&lt;pkg_metric&gt;&gt; &lt;list&lt;pkg_metric&gt;&gt;
-#&gt; 1 riskmetric 0.1.0   riskmetric&lt;install&gt; TRUE               0                 
+#&gt; 1 riskmetric 0.1.1   riskmetric&lt;install&gt; TRUE               0                 
 #&gt; # … with 12 more variables: has_bug_reports_url &lt;list&lt;pkg_metric&gt;&gt;,
 #&gt; #   bugs_status &lt;list&lt;pkg_metric&gt;&gt;, license &lt;list&lt;pkg_metric&gt;&gt;,
 #&gt; #   export_help &lt;list&lt;pkg_metric&gt;&gt;, downloads_1yr &lt;list&lt;pkg_metric&gt;&gt;,
@@ -429,12 +427,13 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <div class="sourceCode" id="cb12"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a><span class="fu">pkg_score</span>(<span class="fu">pkg_assess</span>(<span class="fu">as_tibble</span>(<span class="fu">pkg_ref</span>(<span class="st">&quot;riskmetric&quot;</span>))))</span>
 <span id="cb12-2"><a href="#cb12-2" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; # A tibble: 1 x 18</span></span>
 <span id="cb12-3"><a href="#cb12-3" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt;   package    version pkg_ref             pkg_score news_current has_vignettes</span></span>
-<span id="cb12-4"><a href="#cb12-4" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt;   &lt;chr&gt;      &lt;chr&gt;   &lt;list&lt;pkg_ref&gt;&gt;         &lt;dbl&gt;        &lt;dbl&gt;         &lt;dbl&gt;</span></span>
-<span id="cb12-5"><a href="#cb12-5" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 1 riskmetric 0.1.0   riskmetric&lt;install&gt;     0.462            1             0</span></span>
-<span id="cb12-6"><a href="#cb12-6" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; # … with 12 more variables: has_bug_reports_url &lt;dbl&gt;, bugs_status &lt;dbl&gt;,</span></span>
-<span id="cb12-7"><a href="#cb12-7" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; #   license &lt;dbl&gt;, export_help &lt;dbl&gt;, downloads_1yr &lt;dbl&gt;, has_website &lt;dbl&gt;,</span></span>
-<span id="cb12-8"><a href="#cb12-8" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; #   r_cmd_check &lt;dbl&gt;, remote_checks &lt;dbl&gt;, has_maintainer &lt;dbl&gt;,</span></span>
-<span id="cb12-9"><a href="#cb12-9" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; #   has_news &lt;dbl&gt;, has_source_control &lt;dbl&gt;, covr_coverage &lt;dbl&gt;</span></span></code></pre></div>
+<span id="cb12-4"><a href="#cb12-4" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt;   &lt;chr&gt;      &lt;chr&gt;   &lt;list&lt;pkg_ref&gt;&gt;         &lt;dbl&gt; &lt;pkg_scor&gt;   &lt;pkg_scor&gt;   </span></span>
+<span id="cb12-5"><a href="#cb12-5" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 1 riskmetric 0.1.1   riskmetric&lt;install&gt;     0.500 1            0            </span></span>
+<span id="cb12-6"><a href="#cb12-6" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; # … with 12 more variables: has_bug_reports_url &lt;pkg_scor&gt;,</span></span>
+<span id="cb12-7"><a href="#cb12-7" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; #   bugs_status &lt;pkg_scor&gt;, license &lt;pkg_scor&gt;, export_help &lt;pkg_scor&gt;,</span></span>
+<span id="cb12-8"><a href="#cb12-8" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; #   downloads_1yr &lt;pkg_scor&gt;, has_website &lt;pkg_scor&gt;, r_cmd_check &lt;pkg_scor&gt;,</span></span>
+<span id="cb12-9"><a href="#cb12-9" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; #   remote_checks &lt;pkg_scor&gt;, has_maintainer &lt;pkg_scor&gt;, has_news &lt;pkg_scor&gt;,</span></span>
+<span id="cb12-10"><a href="#cb12-10" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; #   has_source_control &lt;pkg_scor&gt;, covr_coverage &lt;pkg_scor&gt;</span></span></code></pre></div>
 <blockquote>
 <p>Note that <code>pkg_assess</code> and <code>pkg_score</code> accepts an <code>error_handler</code> argument which determines how errors are escalated for communication. We’ve chosen to default to being cautious, displaying warnings liberally to ensure thorough documentation of the risk assessment process. If these warnings are bothersome, there are alternative reporting schemes in the <code>assessment_error_*</code> and <code>score_error_*</code> families of functions.</p>
 </blockquote>
@@ -457,20 +456,21 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <span id="cb14-3"><a href="#cb14-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">pkg_score</span>()</span>
 <span id="cb14-4"><a href="#cb14-4" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; # A tibble: 3 x 18</span></span>
 <span id="cb14-5"><a href="#cb14-5" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt;   package    version pkg_ref             pkg_score news_current has_vignettes</span></span>
-<span id="cb14-6"><a href="#cb14-6" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt;   &lt;chr&gt;      &lt;chr&gt;   &lt;list&lt;pkg_ref&gt;&gt;         &lt;dbl&gt;        &lt;dbl&gt;         &lt;dbl&gt;</span></span>
-<span id="cb14-7"><a href="#cb14-7" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 1 riskmetric 0.1.0   riskmetric&lt;install&gt;     0.462            1             0</span></span>
-<span id="cb14-8"><a href="#cb14-8" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 2 utils      4.0.3   utils&lt;install&gt;          0.786            0             1</span></span>
-<span id="cb14-9"><a href="#cb14-9" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 3 tools      4.0.3   tools&lt;install&gt;          0.857            0             0</span></span>
-<span id="cb14-10"><a href="#cb14-10" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; # … with 12 more variables: has_bug_reports_url &lt;dbl&gt;, bugs_status &lt;dbl&gt;,</span></span>
-<span id="cb14-11"><a href="#cb14-11" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; #   license &lt;dbl&gt;, export_help &lt;dbl&gt;, downloads_1yr &lt;dbl&gt;, has_website &lt;dbl&gt;,</span></span>
-<span id="cb14-12"><a href="#cb14-12" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; #   r_cmd_check &lt;dbl&gt;, remote_checks &lt;dbl&gt;, has_maintainer &lt;dbl&gt;,</span></span>
-<span id="cb14-13"><a href="#cb14-13" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; #   has_news &lt;dbl&gt;, has_source_control &lt;dbl&gt;, covr_coverage &lt;dbl&gt;</span></span></code></pre></div>
+<span id="cb14-6"><a href="#cb14-6" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt;   &lt;chr&gt;      &lt;chr&gt;   &lt;list&lt;pkg_ref&gt;&gt;         &lt;dbl&gt; &lt;pkg_scor&gt;   &lt;pkg_scor&gt;   </span></span>
+<span id="cb14-7"><a href="#cb14-7" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 1 riskmetric 0.1.1   riskmetric&lt;install&gt;     0.500 1            0            </span></span>
+<span id="cb14-8"><a href="#cb14-8" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 2 utils      4.1.0   utils&lt;install&gt;          0.786 0            1            </span></span>
+<span id="cb14-9"><a href="#cb14-9" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 3 tools      4.1.0   tools&lt;install&gt;          0.857 0            0            </span></span>
+<span id="cb14-10"><a href="#cb14-10" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; # … with 12 more variables: has_bug_reports_url &lt;pkg_scor&gt;,</span></span>
+<span id="cb14-11"><a href="#cb14-11" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; #   bugs_status &lt;pkg_scor&gt;, license &lt;pkg_scor&gt;, export_help &lt;pkg_scor&gt;,</span></span>
+<span id="cb14-12"><a href="#cb14-12" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; #   downloads_1yr &lt;pkg_scor&gt;, has_website &lt;pkg_scor&gt;, r_cmd_check &lt;pkg_scor&gt;,</span></span>
+<span id="cb14-13"><a href="#cb14-13" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; #   remote_checks &lt;pkg_scor&gt;, has_maintainer &lt;pkg_scor&gt;, has_news &lt;pkg_scor&gt;,</span></span>
+<span id="cb14-14"><a href="#cb14-14" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; #   has_source_control &lt;pkg_scor&gt;, covr_coverage &lt;pkg_scor&gt;</span></span></code></pre></div>
 <p>Notice that a summary column, <code>pkg_score</code>, is included in addition to our metric scores. This value is a shorthand for aggregating a weighted average of risk scores across <code>tibble</code> columns using <code>summarize_scores</code>.</p>
 <div class="sourceCode" id="cb15"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a>package_tbl <span class="sc">%&gt;%</span></span>
 <span id="cb15-2"><a href="#cb15-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">pkg_assess</span>() <span class="sc">%&gt;%</span></span>
 <span id="cb15-3"><a href="#cb15-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">pkg_score</span>() <span class="sc">%&gt;%</span></span>
 <span id="cb15-4"><a href="#cb15-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">summarize_scores</span>()</span>
-<span id="cb15-5"><a href="#cb15-5" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; [1] 0.4619048 0.7860404 0.8571429</span></span></code></pre></div>
+<span id="cb15-5"><a href="#cb15-5" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; [1] 0.4996187 0.7860375 0.8571429</span></span></code></pre></div>
 </div>
 </div>
 <div id="how-you-can-help" class="section level1">

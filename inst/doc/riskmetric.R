@@ -7,13 +7,12 @@ options(repos = "https://cran.rstudio.com")
 
 knitr::opts_chunk$set(
   collapse = TRUE,
-  comment = "#>"
+  comment = "#>",
+  fig.path = "man/figures/"
 )
 
 ## ---- echo = FALSE------------------------------------------------------------
-knitr::include_graphics(system.file(
-  file.path("assets", "core-workflow.svg"), 
-  package = "riskmetric"))
+knitr::include_graphics("../man/figures/core-workflow.svg")
 
 ## ---- eval = FALSE------------------------------------------------------------
 #  library(riskmetric)
