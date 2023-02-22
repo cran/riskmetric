@@ -30,21 +30,6 @@ roxygen_assess_family <- function(name,
     "@examples assess_%s(pkg_ref(\"%s\"))"
   }
 
-
-  if (!assess_func %in% getNamespaceExports(utils::packageName()) ||
-      !score_func %in% getNamespaceExports(utils::packageName())) {
-    stop(sprintf(
-      paste0(
-        "All assess_* functions must have a corresponding score.* method ",
-        "implemented.\n\n",
-        "To remove build errors, ensure that the following functions are ",
-        "implemented:\n\n",
-        "  %s()\n",
-        "  %s()\n"),
-      assess_func,
-      score_func))
-  }
-
   c("@param x a \\code{pkg_ref} package reference object",
     "@param ... additional arguments passed on to S3 methods, rarely used",
     sprintf("@return a \\code{pkg_metric} containing %s", return_type),
@@ -88,6 +73,19 @@ all_assessments <- function() {
     getNamespaceExports(utils::packageName()),
     value = TRUE)
   Map(getExportedValue, fs, ns = list(utils::packageName()))
+}
+
+#' Get a specific set of assess_* functions for pkg_assess
+#'
+#' @param fxn_string vector of assess functions
+#' @return a list of specific assess_* functions exported from riskmetric
+#'
+#' @importFrom utils packageName
+#' @export
+get_assessments <- function(fxn_string=""){
+  Map(getExportedValue,
+      fxn_string,
+      ns = list(utils::packageName()))
 }
 
 
