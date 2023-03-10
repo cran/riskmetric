@@ -12,7 +12,7 @@
 
 <meta name="author" content="R Validation Hub" />
 
-<meta name="date" content="2023-02-22" />
+<meta name="date" content="2023-03-10" />
 
 <title>Get Started</title>
 
@@ -340,7 +340,7 @@ code > span.er { color: #a61717; background-color: #e3d2d2; }
 
 <h1 class="title toc-ignore">Get Started</h1>
 <h4 class="author">R Validation Hub</h4>
-<h4 class="date">2023-02-22</h4>
+<h4 class="date">2023-03-10</h4>
 
 
 <div id="TOC">
@@ -469,13 +469,13 @@ metadata as it’s collected in the various risk assessments.</p>
 <div class="sourceCode" id="cb1"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(riskmetric)</span>
 <span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a>riskmetric_pkg_ref <span class="ot">&lt;-</span> <span class="fu">pkg_ref</span>(<span class="st">&quot;riskmetric&quot;</span>)</span>
 <span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="fu">print</span>(riskmetric_pkg_ref)</span></code></pre></div>
-<pre><code>#&gt; &lt;pkg_install, pkg_ref&gt; riskmetric v0.2.0
+<pre><code>#&gt; &lt;pkg_install, pkg_ref&gt; riskmetric v0.2.1
 #&gt; $path
 #&gt;   [1] &quot;/home/user/username/R/4.2/Resources/library/riskmetric&quot;
 #&gt; $source
 #&gt;   [1] &quot;pkg_install&quot;
 #&gt; $version
-#&gt;   [1] &#39;0.2.0&#39;
+#&gt;   [1] &#39;0.2.1&#39;
 #&gt; $name
 #&gt;   [1] &quot;riskmetric&quot;
 #&gt; $bug_reports...
@@ -541,7 +541,7 @@ dispatching to an appropriate scoring method.</p>
 the side-effect of mutating our <code>riskmetric_pkg_ref</code>
 object.</p>
 <div class="sourceCode" id="cb5"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a>riskmetric_pkg_ref</span></code></pre></div>
-<pre><code>#&gt; &lt;pkg_install, pkg_ref&gt; riskmetric v0.2.0
+<pre><code>#&gt; &lt;pkg_install, pkg_ref&gt; riskmetric v0.2.1
 #&gt; $help_aliases
 #&gt;                            %||%                        .tools
 #&gt;              &quot;if_not_null_else&quot;                   &quot;dot-tools&quot;
@@ -555,7 +555,7 @@ object.</p>
 #&gt; $source
 #&gt;   [1] &quot;pkg_install&quot;
 #&gt; $version
-#&gt;   [1] &#39;0.2.0&#39;
+#&gt;   [1] &#39;0.2.1&#39;
 #&gt; $name
 #&gt;   [1] &quot;riskmetric&quot;
 #&gt; $bug_reports...
@@ -627,9 +627,9 @@ namespace.</p>
 #&gt; [1] &quot;presence of a bug reports url in repository&quot;
 #&gt; 
 #&gt; $bugs_status
-#&gt;  [1] FALSE FALSE  TRUE FALSE FALSE FALSE FALSE FALSE  TRUE  TRUE FALSE FALSE
-#&gt; [13] FALSE  TRUE  TRUE  TRUE FALSE FALSE  TRUE  TRUE FALSE FALSE  TRUE FALSE
-#&gt; [25] FALSE FALSE  TRUE FALSE  TRUE FALSE
+#&gt;  [1]  TRUE  TRUE FALSE FALSE FALSE  TRUE FALSE FALSE FALSE  TRUE  TRUE  TRUE
+#&gt; [13]  TRUE FALSE FALSE FALSE  TRUE  TRUE  TRUE FALSE FALSE  TRUE  TRUE FALSE
+#&gt; [25] FALSE  TRUE FALSE FALSE FALSE  TRUE
 #&gt; 
 #&gt; $license
 #&gt; [1] &quot;MIT + file LICENSE&quot;
@@ -760,20 +760,17 @@ namespace.</p>
 on <code>tibble</code>s, returning a cleaner output that might be easier
 to sort through when assessing a package.</p>
 <div class="sourceCode" id="cb9"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="fu">pkg_assess</span>(<span class="fu">as_tibble</span>(riskmetric_pkg_ref))</span></code></pre></div>
-<pre><code>#&gt; Warning in pillar::colonnade(df, has_row_id = if (star) &quot;*&quot; else TRUE, needs_dots = needs_dots): `...` must be empty.
-#&gt; ✖ Problematic argument:
-#&gt; • needs_dots = needs_dots
-#&gt; # A tibble: 1 x 21
-#&gt;   package version pkg_ref             news_c… has_vi… size_codeba… has_bu…
-#&gt;   &lt;chr&gt;   &lt;chr&gt;   &lt;lst_f_p_&gt;          &lt;lst_f&gt; &lt;lst_f&gt; &lt;lst_f_p_&gt;   &lt;lst_f&gt;
-#&gt; 1 riskme… 0.2.0   riskmetric&lt;install&gt; TRUE    0       &lt;error&gt;      1      
+<pre><code>#&gt; # A tibble: 1 × 21
+#&gt;   package    version pkg_ref             news_cur…¹ has_v…² size_codeb…³ has_b…⁴
+#&gt;   &lt;chr&gt;      &lt;chr&gt;   &lt;lst_f_p_&gt;          &lt;lst_f_p_&gt; &lt;lst_f&gt; &lt;lst_f_p_&gt;   &lt;lst_f&gt;
+#&gt; 1 riskmetric 0.2.1   riskmetric&lt;install&gt; TRUE       0       &lt;error&gt;      1      
 #&gt; # … with 14 more variables: bugs_status &lt;lst_f_p_&gt;, license &lt;lst_f_p_&gt;,
 #&gt; #   export_help &lt;lst_f_p_&gt;, reverse_dependencies &lt;lst_f_p_&gt;,
 #&gt; #   downloads_1yr &lt;lst_f_p_&gt;, dependencies &lt;lst_f_p_&gt;, has_website &lt;lst_f_p_&gt;,
 #&gt; #   r_cmd_check &lt;lst_f_p_&gt;, remote_checks &lt;lst_f_p_&gt;,
 #&gt; #   has_maintainer &lt;lst_f_p_&gt;, exported_namespace &lt;lst_f_p_&gt;,
 #&gt; #   has_news &lt;lst_f_p_&gt;, has_source_control &lt;lst_f_p_&gt;,
-#&gt; #   covr_coverage &lt;lst_f_p_&gt;</code></pre>
+#&gt; #   covr_coverage &lt;lst_f_p_&gt;, and abbreviated variable names ¹​news_current, …</code></pre>
 </div>
 <div id="scoring-package-metrics" class="section level2">
 <h2>Scoring package metrics</h2>
@@ -790,17 +787,17 @@ on the <code>tibble</code> produced by <code>pkg_assess</code> applied
 to a <code>pkg_ref</code> <code>tibble</code>, providing a new
 <code>tibble</code> with scored metrics.</p>
 <div class="sourceCode" id="cb12"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a><span class="fu">pkg_score</span>(<span class="fu">pkg_assess</span>(<span class="fu">as_tibble</span>(<span class="fu">pkg_ref</span>(<span class="st">&quot;riskmetric&quot;</span>))))</span>
-<span id="cb12-2"><a href="#cb12-2" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; # A tibble: 1 x 22</span></span>
-<span id="cb12-3"><a href="#cb12-3" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt;   package version pkg_ref             pkg_sc… news_c… has_vi… size_c… has_bu…</span></span>
-<span id="cb12-4"><a href="#cb12-4" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt;   &lt;chr&gt;   &lt;chr&gt;   &lt;lst_f_p_&gt;            &lt;dbl&gt; &lt;pkg_s&gt; &lt;pkg_s&gt; &lt;pkg_s&gt; &lt;pkg_s&gt;</span></span>
-<span id="cb12-5"><a href="#cb12-5" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 1 riskme… 0.2.0   riskmetric&lt;install&gt;   0.552 1       0       NA      1      </span></span>
+<span id="cb12-2"><a href="#cb12-2" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; # A tibble: 1 × 22</span></span>
+<span id="cb12-3"><a href="#cb12-3" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt;   package    version pkg_ref             pkg_s…¹ news_…² has_v…³ size_…⁴ has_b…⁵</span></span>
+<span id="cb12-4"><a href="#cb12-4" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt;   &lt;chr&gt;      &lt;chr&gt;   &lt;lst_f_p_&gt;            &lt;dbl&gt; &lt;pkg_s&gt; &lt;pkg_s&gt; &lt;pkg_s&gt; &lt;pkg_s&gt;</span></span>
+<span id="cb12-5"><a href="#cb12-5" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 1 riskmetric 0.2.1   riskmetric&lt;install&gt;   0.546 1       0       NA      1      </span></span>
 <span id="cb12-6"><a href="#cb12-6" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; # … with 14 more variables: bugs_status &lt;pkg_scor&gt;, license &lt;pkg_scor&gt;,</span></span>
 <span id="cb12-7"><a href="#cb12-7" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; #   export_help &lt;pkg_scor&gt;, reverse_dependencies &lt;pkg_scor&gt;,</span></span>
 <span id="cb12-8"><a href="#cb12-8" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; #   downloads_1yr &lt;pkg_scor&gt;, dependencies &lt;pkg_scor&gt;, has_website &lt;pkg_scor&gt;,</span></span>
 <span id="cb12-9"><a href="#cb12-9" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; #   r_cmd_check &lt;pkg_scor&gt;, remote_checks &lt;pkg_scor&gt;,</span></span>
 <span id="cb12-10"><a href="#cb12-10" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; #   has_maintainer &lt;pkg_scor&gt;, exported_namespace &lt;pkg_scor&gt;,</span></span>
 <span id="cb12-11"><a href="#cb12-11" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; #   has_news &lt;pkg_scor&gt;, has_source_control &lt;pkg_scor&gt;,</span></span>
-<span id="cb12-12"><a href="#cb12-12" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; #   covr_coverage &lt;pkg_scor&gt;</span></span></code></pre></div>
+<span id="cb12-12"><a href="#cb12-12" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; #   covr_coverage &lt;pkg_scor&gt;, and abbreviated variable names ¹​pkg_score, …</span></span></code></pre></div>
 <blockquote>
 <p>Note that <code>pkg_assess</code> and <code>pkg_score</code> accepts
 an <code>error_handler</code> argument which determines how errors are
@@ -837,19 +834,19 @@ cohort of packages at once.</p>
 <div class="sourceCode" id="cb14"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a>package_tbl <span class="sc">%&gt;%</span></span>
 <span id="cb14-2"><a href="#cb14-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">pkg_assess</span>() <span class="sc">%&gt;%</span></span>
 <span id="cb14-3"><a href="#cb14-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">pkg_score</span>()</span>
-<span id="cb14-4"><a href="#cb14-4" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; # A tibble: 3 x 22</span></span>
-<span id="cb14-5"><a href="#cb14-5" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt;   package version pkg_ref             pkg_sc… news_c… has_vi… size_c… has_bu…</span></span>
-<span id="cb14-6"><a href="#cb14-6" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt;   &lt;chr&gt;   &lt;chr&gt;   &lt;lst_f_p_&gt;            &lt;dbl&gt; &lt;pkg_s&gt; &lt;pkg_s&gt; &lt;pkg_s&gt; &lt;pkg_s&gt;</span></span>
-<span id="cb14-7"><a href="#cb14-7" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 1 riskme… 0.2.0   riskmetric&lt;install&gt;   0.552 1       0       NA      1      </span></span>
-<span id="cb14-8"><a href="#cb14-8" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 2 utils   4.2.0   utils&lt;install&gt;        0.725 0       1       NA      0      </span></span>
-<span id="cb14-9"><a href="#cb14-9" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 3 tools   4.2.0   tools&lt;install&gt;        0.774 0       0       NA      0      </span></span>
+<span id="cb14-4"><a href="#cb14-4" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; # A tibble: 3 × 22</span></span>
+<span id="cb14-5"><a href="#cb14-5" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt;   package    version pkg_ref             pkg_s…¹ news_…² has_v…³ size_…⁴ has_b…⁵</span></span>
+<span id="cb14-6"><a href="#cb14-6" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt;   &lt;chr&gt;      &lt;chr&gt;   &lt;lst_f_p_&gt;            &lt;dbl&gt; &lt;pkg_s&gt; &lt;pkg_s&gt; &lt;pkg_s&gt; &lt;pkg_s&gt;</span></span>
+<span id="cb14-7"><a href="#cb14-7" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 1 riskmetric 0.2.1   riskmetric&lt;install&gt;   0.546 1       0       NA      1      </span></span>
+<span id="cb14-8"><a href="#cb14-8" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 2 utils      4.2.0   utils&lt;install&gt;        0.725 0       1       NA      0      </span></span>
+<span id="cb14-9"><a href="#cb14-9" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 3 tools      4.2.0   tools&lt;install&gt;        0.774 0       0       NA      0      </span></span>
 <span id="cb14-10"><a href="#cb14-10" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; # … with 14 more variables: bugs_status &lt;pkg_scor&gt;, license &lt;pkg_scor&gt;,</span></span>
 <span id="cb14-11"><a href="#cb14-11" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; #   export_help &lt;pkg_scor&gt;, reverse_dependencies &lt;pkg_scor&gt;,</span></span>
 <span id="cb14-12"><a href="#cb14-12" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; #   downloads_1yr &lt;pkg_scor&gt;, dependencies &lt;pkg_scor&gt;, has_website &lt;pkg_scor&gt;,</span></span>
 <span id="cb14-13"><a href="#cb14-13" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; #   r_cmd_check &lt;pkg_scor&gt;, remote_checks &lt;pkg_scor&gt;,</span></span>
 <span id="cb14-14"><a href="#cb14-14" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; #   has_maintainer &lt;pkg_scor&gt;, exported_namespace &lt;pkg_scor&gt;,</span></span>
 <span id="cb14-15"><a href="#cb14-15" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; #   has_news &lt;pkg_scor&gt;, has_source_control &lt;pkg_scor&gt;,</span></span>
-<span id="cb14-16"><a href="#cb14-16" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; #   covr_coverage &lt;pkg_scor&gt;</span></span></code></pre></div>
+<span id="cb14-16"><a href="#cb14-16" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; #   covr_coverage &lt;pkg_scor&gt;, and abbreviated variable names ¹​pkg_score, …</span></span></code></pre></div>
 <p>Notice that a summary column, <code>pkg_score</code>, is included in
 addition to our metric scores. This value is a shorthand for aggregating
 a weighted average of risk scores across <code>tibble</code> columns
@@ -858,7 +855,7 @@ using <code>summarize_scores</code>.</p>
 <span id="cb15-2"><a href="#cb15-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">pkg_assess</span>() <span class="sc">%&gt;%</span></span>
 <span id="cb15-3"><a href="#cb15-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">pkg_score</span>() <span class="sc">%&gt;%</span></span>
 <span id="cb15-4"><a href="#cb15-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">summarize_scores</span>()</span>
-<span id="cb15-5"><a href="#cb15-5" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; [1] 0.5520129 0.7250304 0.7740764</span></span></code></pre></div>
+<span id="cb15-5"><a href="#cb15-5" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; [1] 0.5464574 0.7250304 0.7740764</span></span></code></pre></div>
 </div>
 </div>
 <div id="how-you-can-help" class="section level1">
