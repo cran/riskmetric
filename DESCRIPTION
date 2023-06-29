@@ -3,7 +3,7 @@ Type: Package
 Title: Risk Metrics to Evaluating R Packages
 Description: Facilities for assessing R packages against a number of metrics to 
     help quantify their robustness.
-Version: 0.2.1
+Version: 0.2.2
 Authors@R: c(
     person("R Validation Hub", role = c("aut"), email = "psi.aims.r.validation@gmail.com"),
     person("Doug", "Kelkhoff", role = c("aut"), email = "doug.kelkhoff@gmail.com"),
@@ -29,7 +29,7 @@ RoxygenNote: 7.2.3
 VignetteBuilder: knitr
 Config/testthat/edition: 3
 NeedsCompilation: no
-Packaged: 2023-03-10 19:11:03 UTC; eli.miller
+Packaged: 2023-06-27 14:27:16 UTC; eli.miller
 Author: R Validation Hub [aut],
   Doug Kelkhoff [aut],
   Marly Gotti [aut],
@@ -43,4 +43,4 @@ Author: R Validation Hub [aut],
     Methodologies in Statistics [cph]
 Maintainer: Eli Miller <eli.miller@atorusresearch.com>
 Repository: CRAN
-Date/Publication: 2023-03-10 21:50:15 UTC
+Date/Publication: 2023-06-29 11:30:04 UTC
