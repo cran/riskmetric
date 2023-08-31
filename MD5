@@ -1,7 +1,7 @@
-49553f5477c56024fac88cd80d5e0493 *DESCRIPTION
+5a561bc0536e97b733d5a6af2e7cb767 *DESCRIPTION
 4b2a6bb3374e3412df208a37f3280a9e *LICENSE
 e800b82357e665133bb3d35e2751053f *NAMESPACE
-dd38e2e1464fed769c02faae2755daab *NEWS.md
+dda2a89f06abcac784de0f9e40f82e95 *NEWS.md
 938daf703beb2364a55332db314664a0 *R/assess_covr_coverage.R
 0af0fa603ea77ae02c046a07f8175a18 *R/assess_dependencies.R
 9748ff740af49914882f77b5677ec038 *R/assess_downloads.R
@@ -30,7 +30,7 @@ c4c988d363b0cecc55f38d5d5201ab14 *R/pkg_assess.R
 d84894aa1f02a5ff7c0490d34147571f *R/pkg_metric.R
 44614481d0817dec454b3f48f687bce6 *R/pkg_metric_condition.R
 3eec5ca47da9a0ff0f571b593d892fe9 *R/pkg_metric_error.R
-ca2dde3757ac39185ecab08135d04189 *R/pkg_metric_na.R
+8554ba68646682e7c1b9bf3602865026 *R/pkg_metric_na.R
 3c75de5322907fedecb82185766a04cd *R/pkg_metric_todo.R
 0661c92328da30247272042ba343ae16 *R/pkg_ref_cache.R
 fe6f1f912a4174e571f82f7853bb06d4 *R/pkg_ref_cache_NEWS_urls.R
@@ -65,7 +65,7 @@ cc5eb1893c882e3642a9abd9a064569b *R/pkg_ref_class_coersion.R
 a36783bfb0aa812e53577a5ad5d280c2 *R/pkg_ref_class_format.R
 fa72ee270dd938ac404b707f0c46bc8c *R/pkg_ref_class_names.R
 1ffc9f9d21bf949e3f36d670a30b2f5a *R/pkg_score.R
-6902f320901ce85505da85a9dba70b19 *R/riskmetric.R
+063a20ec1f0ba1d026816f49ed701fed *R/riskmetric-package.R
 c909434fe44073dd7210be0585c7fed2 *R/summarize_scores.R
 dfdd51976aed5515cbe1938e4054bc5e *R/utils.R
 30ec177fd525856e386968588945bc92 *R/utils_memoised.R
@@ -77,16 +77,16 @@ c54e87f1a7f6c6a03b6fa64f3bad5639 *R/zzz.R
 c9b52fe80c70d04eaa10ebd380d90a08 *inst/assets/core-workflow.svg
 4e22ca863afb5ac06aac4cf2c5480073 *inst/doc/extending-riskmetric.R
 55cdd53ba721505855bbc49425f6bfbd *inst/doc/extending-riskmetric.Rmd
-4c9a367184c84a66e7842e7ac524a48b *inst/doc/extending-riskmetric.html
+8a8958a2edbd8ec1025fd1a926ceb8cb *inst/doc/extending-riskmetric.html
 1a51f1c89b5a5dbf1356eac035085888 *inst/doc/riskmetric.R
 b3decb9930e32849b4f002ee4855c56e *inst/doc/riskmetric.Rmd
-da5445a75ec30862e7bbab121a385093 *inst/doc/riskmetric.html
+e999ab2a9e028fe015658f96e3c124dd *inst/doc/riskmetric.html
 a650fa7d4fd1670a9107ac779324ba43 *man/all_assessments.Rd
 355e2dcac2274a534ab326ae2f5f08d1 *man/allow_mutation.Rd
 e2099e72619a9cf5d4115505bc1c753a *man/as_pkg_metric.Rd
 c01fa21aece6196d7d4aa8a18b019e88 *man/as_pkg_metric_condition.Rd
 36477f6cf767d89e544d739a8ca1401a *man/as_pkg_metric_error.Rd
-cd2154afad044ed27ef610d8ee81892e *man/as_pkg_metric_na.Rd
+520d7716703d8ad3a2dde13209b91335 *man/as_pkg_metric_na.Rd
 401283a1619111cdba1fa63257dc4276 *man/as_pkg_metric_todo.Rd
 60980c7ad440c713b693716debf65bb9 *man/assess_covr_coverage.Rd
 f8e29a1c2e97b59e6fcdb5f9cfa759e1 *man/assess_dependencies.Rd
@@ -175,7 +175,7 @@ de142a5db7cadd1c4c7b709ecaccee28 *man/pkg_score.Rd
 e8151685d07570961b6d6e5f16167ca9 *man/print.with_eval_recording.Rd
 62af46fb7172771f7c64806f6be46b0f *man/remove_base_packages.Rd
 f632a2685e37275b9663c62c258cc0c8 *man/require_cache_behaviors.Rd
-50279c88a9812217eaeb08393c05ef5c *man/riskmetric.Rd
+96c611d3751deab767fe2bac73f1c346 *man/riskmetric.Rd
 d2a5c3034fc625e9ca509360645ebf0f *man/riskmetric_metadata_caching.Rd
 2cada3c8377f800f8da76b08d05deab3 *man/roxygen_assess_family.Rd
 815899488533c896e6bf0893ae0b49d7 *man/roxygen_assess_family_catalog.Rd

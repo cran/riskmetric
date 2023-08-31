@@ -12,7 +12,7 @@
 
 <meta name="author" content="R Validation Hub" />
 
-<meta name="date" content="2023-06-27" />
+<meta name="date" content="2023-08-31" />
 
 <title>Extending riskmetric</title>
 
@@ -340,7 +340,7 @@ code > span.er { color: #a61717; background-color: #e3d2d2; }
 
 <h1 class="title toc-ignore">Extending riskmetric</h1>
 <h4 class="author">R Validation Hub</h4>
-<h4 class="date">2023-06-27</h4>
+<h4 class="date">2023-08-31</h4>
 
 
 
@@ -465,13 +465,13 @@ field is first accessed by the <code>pkg_ref</code> object, and then
 stored for any downstream uses.</p>
 <div class="sourceCode" id="cb5"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(riskmetric)</span>
 <span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a>package <span class="ot">&lt;-</span> <span class="fu">pkg_ref</span>(<span class="st">&quot;riskmetric&quot;</span>)</span></code></pre></div>
-<pre><code>#&gt; &lt;pkg_install, pkg_ref&gt; riskmetric v0.2.2
+<pre><code>#&gt; &lt;pkg_install, pkg_ref&gt; riskmetric v0.2.3
 #&gt; $path
 #&gt;   [1] &quot;/home/user/username/R/4.2/Resources/library/riskmetric&quot;
 #&gt; $source
 #&gt;   [1] &quot;pkg_install&quot;
 #&gt; $version
-#&gt;   [1] &#39;0.2.2&#39;
+#&gt;   [1] &#39;0.2.3&#39;
 #&gt; $name
 #&gt;   [1] &quot;riskmetric&quot;
 #&gt; $bug_reports...
@@ -553,7 +553,7 @@ assessment toolkit.</p>
 <span id="cb12-5"><a href="#cb12-5" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; # A tibble: 3 × 23</span></span>
 <span id="cb12-6"><a href="#cb12-6" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt;   package  version pkg_ref             bugs_status covr_c…¹ size_codeb…² expor…³</span></span>
 <span id="cb12-7"><a href="#cb12-7" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt;   &lt;chr&gt;    &lt;chr&gt;   &lt;lst_f_p_&gt;          &lt;lst_f_p_&gt;  &lt;lst_f_&gt; &lt;lst_f_p_&gt;   &lt;lst_f&gt;</span></span>
-<span id="cb12-8"><a href="#cb12-8" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 1 riskmet… 0.2.2   riskmetric&lt;install&gt; &lt;lgl [30]&gt;  NA       &lt;error&gt;      &lt;lgl&gt;  </span></span>
+<span id="cb12-8"><a href="#cb12-8" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 1 riskmet… 0.2.3   riskmetric&lt;install&gt; &lt;lgl [30]&gt;  NA       &lt;error&gt;      &lt;lgl&gt;  </span></span>
 <span id="cb12-9"><a href="#cb12-9" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 2 utils    4.2.0   utils&lt;install&gt;      &lt;error&gt;     NA       &lt;error&gt;      &lt;lgl&gt;  </span></span>
 <span id="cb12-10"><a href="#cb12-10" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 3 tools    4.2.0   tools&lt;install&gt;      &lt;error&gt;     NA       12208        &lt;lgl&gt;  </span></span>
 <span id="cb12-11"><a href="#cb12-11" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; # … with 16 more variables: r_cmd_check &lt;lst_f_p_&gt;, dependencies &lt;lst_f_p_&gt;,</span></span>
@@ -572,7 +572,7 @@ score method.</p>
 <span id="cb13-5"><a href="#cb13-5" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; # A tibble: 3 × 24</span></span>
 <span id="cb13-6"><a href="#cb13-6" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt;   package    version pkg_ref             pkg_score bugs_status covr_co…¹ size_…²</span></span>
 <span id="cb13-7"><a href="#cb13-7" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt;   &lt;chr&gt;      &lt;chr&gt;   &lt;lst_f_p_&gt;              &lt;dbl&gt; &lt;pkg_scor&gt;  &lt;pkg_sco&gt; &lt;pkg_s&gt;</span></span>
-<span id="cb13-8"><a href="#cb13-8" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 1 riskmetric 0.2.2   riskmetric&lt;install&gt;     0.493 0.4333333   NA        NA     </span></span>
+<span id="cb13-8"><a href="#cb13-8" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 1 riskmetric 0.2.3   riskmetric&lt;install&gt;     0.498 0.3333333   NA        NA     </span></span>
 <span id="cb13-9"><a href="#cb13-9" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 2 utils      4.2.0   utils&lt;install&gt;          0.703        NA   NA        NA     </span></span>
 <span id="cb13-10"><a href="#cb13-10" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 3 tools      4.2.0   tools&lt;install&gt;          0.747        NA   NA        NA     </span></span>
 <span id="cb13-11"><a href="#cb13-11" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; # … with 17 more variables: export_help &lt;pkg_scor&gt;, r_cmd_check &lt;pkg_scor&gt;,</span></span>
@@ -591,7 +591,7 @@ to <code>pkg_score</code>.</p>
 <span id="cb14-5"><a href="#cb14-5" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; # A tibble: 3 × 24</span></span>
 <span id="cb14-6"><a href="#cb14-6" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt;   package    version pkg_ref             pkg_score bugs_status covr_co…¹ size_…²</span></span>
 <span id="cb14-7"><a href="#cb14-7" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt;   &lt;chr&gt;      &lt;chr&gt;   &lt;lst_f_p_&gt;              &lt;dbl&gt; &lt;pkg_scor&gt;  &lt;pkg_sco&gt; &lt;pkg_s&gt;</span></span>
-<span id="cb14-8"><a href="#cb14-8" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 1 riskmetric 0.2.2   riskmetric&lt;install&gt;         0 0.4333333   NA        NA     </span></span>
+<span id="cb14-8"><a href="#cb14-8" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 1 riskmetric 0.2.3   riskmetric&lt;install&gt;         0 0.3333333   NA        NA     </span></span>
 <span id="cb14-9"><a href="#cb14-9" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 2 utils      4.2.0   utils&lt;install&gt;              1        NA   NA        NA     </span></span>
 <span id="cb14-10"><a href="#cb14-10" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 3 tools      4.2.0   tools&lt;install&gt;              1        NA   NA        NA     </span></span>
 <span id="cb14-11"><a href="#cb14-11" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; # … with 17 more variables: export_help &lt;pkg_scor&gt;, r_cmd_check &lt;pkg_scor&gt;,</span></span>
