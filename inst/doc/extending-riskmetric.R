@@ -18,10 +18,10 @@ print_riskmetric_function <- function(names) {
   }
 }
 
-## ---- echo = FALSE------------------------------------------------------------
+## ----echo = FALSE-------------------------------------------------------------
 print_riskmetric_function(c("assess_has_news", "assess_has_news.pkg_install"))
 
-## ---- results = 'hide'--------------------------------------------------------
+## ----results = 'hide'---------------------------------------------------------
 assess_name_first_letter <- function(x, ...) {
   UseMethod("assess_name_first_letter")
 }
@@ -31,17 +31,17 @@ assess_name_first_letter.pkg_ref <- function(x, ...) {
   pkg_metric(substr(x$name, 0, 1), class = "pkg_metric_name_first_letter")
 } 
 
-## ---- echo = FALSE------------------------------------------------------------
+## ----echo = FALSE-------------------------------------------------------------
 print_riskmetric_function(c("pkg_ref_cache.description", "pkg_ref_cache.description.pkg_install"))
 
-## ---- eval = FALSE------------------------------------------------------------
+## ----eval = FALSE-------------------------------------------------------------
 #  library(riskmetric)
 #  package <- pkg_ref("riskmetric")
 
-## ---- echo = FALSE------------------------------------------------------------
+## ----echo = FALSE-------------------------------------------------------------
 package_real <- pkg_ref("riskmetric")
 
-## ---- echo = FALSE------------------------------------------------------------
+## ----echo = FALSE-------------------------------------------------------------
 rver <- gsub("\\.\\d+$", "", paste0(R.version$major, ".", R.version$minor))
 package <- pkg_ref("riskmetric")
 
@@ -53,7 +53,7 @@ invisible(riskmetric:::bare_env(package, {
 
 package
 
-## ---- eval = FALSE------------------------------------------------------------
+## ----eval = FALSE-------------------------------------------------------------
 #  package$description
 
 ## -----------------------------------------------------------------------------
@@ -81,13 +81,13 @@ pkg_ref(c("riskmetric", "utils", "tools")) %>%
   as_tibble() %>%
   pkg_assess(c(all_assessments(), assess_name_first_letter))
 
-## ---- warning = FALSE---------------------------------------------------------
+## ----warning = FALSE----------------------------------------------------------
 pkg_ref(c("riskmetric", "utils", "tools")) %>%
   as_tibble() %>%
   pkg_assess(c(all_assessments(), assess_name_first_letter)) %>%
   pkg_score()
 
-## ---- warning = FALSE---------------------------------------------------------
+## ----warning = FALSE----------------------------------------------------------
 pkg_ref(c("riskmetric", "utils", "tools")) %>%
   as_tibble() %>%
   pkg_assess(c(all_assessments(), assess_name_first_letter)) %>%

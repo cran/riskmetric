@@ -12,7 +12,7 @@
 
 <meta name="author" content="R Validation Hub" />
 
-<meta name="date" content="2023-08-31" />
+<meta name="date" content="2024-01-09" />
 
 <title>Get Started</title>
 
@@ -340,7 +340,7 @@ code > span.er { color: #a61717; background-color: #e3d2d2; }
 
 <h1 class="title toc-ignore">Get Started</h1>
 <h4 class="author">R Validation Hub</h4>
-<h4 class="date">2023-08-31</h4>
+<h4 class="date">2024-01-09</h4>
 
 
 <div id="TOC">
@@ -466,16 +466,16 @@ functions.</p>
 <p>First, we create a <em>package reference</em> class object using the
 <code>pkg_ref</code> constructor function. This object will contain
 metadata as it’s collected in the various risk assessments.</p>
-<div class="sourceCode" id="cb1"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(riskmetric)</span>
-<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a>riskmetric_pkg_ref <span class="ot">&lt;-</span> <span class="fu">pkg_ref</span>(<span class="st">&quot;riskmetric&quot;</span>)</span>
-<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="fu">print</span>(riskmetric_pkg_ref)</span></code></pre></div>
-<pre><code>#&gt; &lt;pkg_install, pkg_ref&gt; riskmetric v0.2.3
+<div class="sourceCode" id="cb1"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" tabindex="-1"></a><span class="fu">library</span>(riskmetric)</span>
+<span id="cb1-2"><a href="#cb1-2" tabindex="-1"></a>riskmetric_pkg_ref <span class="ot">&lt;-</span> <span class="fu">pkg_ref</span>(<span class="st">&quot;riskmetric&quot;</span>)</span>
+<span id="cb1-3"><a href="#cb1-3" tabindex="-1"></a><span class="fu">print</span>(riskmetric_pkg_ref)</span></code></pre></div>
+<pre><code>#&gt; &lt;pkg_install, pkg_ref&gt; riskmetric v0.2.4
 #&gt; $path
-#&gt;   [1] &quot;/home/user/username/R/4.2/Resources/library/riskmetric&quot;
+#&gt;   [1] &quot;/home/user/username/R/4.3/Resources/library/riskmetric&quot;
 #&gt; $source
 #&gt;   [1] &quot;pkg_install&quot;
 #&gt; $version
-#&gt;   [1] &#39;0.2.3&#39;
+#&gt;   [1] &#39;0.2.4&#39;
 #&gt; $name
 #&gt;   [1] &quot;riskmetric&quot;
 #&gt; $bug_reports...
@@ -524,14 +524,14 @@ convention with <code>assess_*</code>. Every assessment function takes a
 single argument, a <code>pkg_ref</code> object and produces a
 <code>pkg_metric</code> object corresponding to the
 <code>assess_*</code> function that was applied.</p>
-<div class="sourceCode" id="cb3"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>riskmetric_export_help_metric <span class="ot">&lt;-</span> <span class="fu">assess_export_help</span>(riskmetric_pkg_ref)</span>
-<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a><span class="fu">print</span>(riskmetric_export_help_metric[<span class="dv">1</span><span class="sc">:</span><span class="dv">5</span>])</span></code></pre></div>
-<pre><code>#&gt;           summarize_scores assess_last_30_bugs_status 
-#&gt;                       TRUE                       TRUE 
-#&gt;                 pkg_assess       assess_covr_coverage 
-#&gt;                       TRUE                       TRUE 
-#&gt;       assess_size_codebase 
-#&gt;                       TRUE</code></pre>
+<div class="sourceCode" id="cb3"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" tabindex="-1"></a>riskmetric_export_help_metric <span class="ot">&lt;-</span> <span class="fu">assess_export_help</span>(riskmetric_pkg_ref)</span>
+<span id="cb3-2"><a href="#cb3-2" tabindex="-1"></a><span class="fu">print</span>(riskmetric_export_help_metric[<span class="dv">1</span><span class="sc">:</span><span class="dv">5</span>])</span></code></pre></div>
+<pre><code>#&gt;        assess_covr_coverage assessment_error_as_warning 
+#&gt;                        TRUE                        TRUE 
+#&gt;               as_pkg_metric             assess_has_news 
+#&gt;                        TRUE                        TRUE 
+#&gt;            score_error_zero 
+#&gt;                        TRUE</code></pre>
 <p>Every function in the <code>assess_*</code> family of functions is
 expected to return basic measure of a package. In this case, we return a
 named logical vector indicating whether each export function has an
@@ -543,8 +543,8 @@ dispatching to an appropriate scoring method.</p>
 <p>It’s worth pointing out that the act of calling this function has had
 the side-effect of mutating our <code>riskmetric_pkg_ref</code>
 object.</p>
-<div class="sourceCode" id="cb5"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a>riskmetric_pkg_ref</span></code></pre></div>
-<pre><code>#&gt; &lt;pkg_install, pkg_ref&gt; riskmetric v0.2.3
+<div class="sourceCode" id="cb5"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" tabindex="-1"></a>riskmetric_pkg_ref</span></code></pre></div>
+<pre><code>#&gt; &lt;pkg_install, pkg_ref&gt; riskmetric v0.2.4
 #&gt; $help_aliases
 #&gt;              riskmetric-package                          %||%
 #&gt;                    &quot;riskmetric&quot;            &quot;if_not_null_else&quot;
@@ -554,11 +554,11 @@ object.</p>
 #&gt;               &quot;all_assessments&quot; &quot;assessment_error_as_warning&quot;
 #&gt;   &lt;continued&gt;
 #&gt; $path
-#&gt;   [1] &quot;/home/user/username/R/4.2/Resources/library/riskmetric&quot;
+#&gt;   [1] &quot;/home/user/username/R/4.3/Resources/library/riskmetric&quot;
 #&gt; $source
 #&gt;   [1] &quot;pkg_install&quot;
 #&gt; $version
-#&gt;   [1] &#39;0.2.3&#39;
+#&gt;   [1] &#39;0.2.4&#39;
 #&gt; $name
 #&gt;   [1] &quot;riskmetric&quot;
 #&gt; $bug_reports...
@@ -606,13 +606,8 @@ provided. Notably, <code>pkg_assess</code> accepts a
 to <code>all_assessments()</code>, which returns a list of all
 <code>assess_*</code> functions in the <code>riskmetric</code>
 namespace.</p>
-<div class="sourceCode" id="cb7"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="fu">pkg_assess</span>(riskmetric_pkg_ref)</span></code></pre></div>
+<div class="sourceCode" id="cb7"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1" tabindex="-1"></a><span class="fu">pkg_assess</span>(riskmetric_pkg_ref)</span></code></pre></div>
 <pre><code>#&gt; &lt;list_of_pkg_metric[19]&gt;
-#&gt; $bugs_status
-#&gt;  [1]  TRUE  TRUE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE
-#&gt; [13] FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE  TRUE  TRUE  TRUE  TRUE
-#&gt; [25]  TRUE FALSE  TRUE  TRUE  TRUE FALSE
-#&gt; 
 #&gt; $covr_coverage
 #&gt; [1] NA
 #&gt; attr(,&quot;class&quot;)
@@ -622,46 +617,29 @@ namespace.</p>
 #&gt; attr(,&quot;label&quot;)
 #&gt; [1] &quot;Package unit test coverage&quot;
 #&gt; 
-#&gt; $size_codebase
-#&gt; &lt;simpleError in attachNamespace(x$name): namespace is already attached&gt;
+#&gt; $has_news
+#&gt; [1] 1
+#&gt; attr(,&quot;class&quot;)
+#&gt; [1] &quot;pkg_metric_has_news&quot; &quot;pkg_metric&quot;          &quot;integer&quot;            
+#&gt; attr(,&quot;label&quot;)
+#&gt; [1] &quot;number of discovered NEWS files&quot;
 #&gt; 
-#&gt; $export_help
-#&gt;            summarize_scores  assess_last_30_bugs_status 
-#&gt;                        TRUE                        TRUE 
-#&gt;                  pkg_assess        assess_covr_coverage 
-#&gt;                        TRUE                        TRUE 
-#&gt;        assess_size_codebase assessment_error_as_warning 
-#&gt;                        TRUE                        TRUE 
-#&gt;      assessment_error_throw          assess_export_help 
-#&gt;                        TRUE                        TRUE 
-#&gt;      assessment_error_empty                  pkg_metric 
-#&gt;                        TRUE                        TRUE 
-#&gt;          assess_r_cmd_check         assess_dependencies 
-#&gt;                        TRUE                        TRUE 
-#&gt; assess_reverse_dependencies             all_assessments 
-#&gt;                        TRUE                        TRUE 
-#&gt;         score_error_default                   pkg_score 
-#&gt;                        TRUE                        TRUE 
-#&gt;              assess_license       assess_has_maintainer 
-#&gt;                        TRUE                        TRUE 
-#&gt;        assess_remote_checks   assess_exported_namespace 
-#&gt;                        TRUE                        TRUE 
-#&gt;          assess_has_website                metric_score 
-#&gt;                        TRUE                        TRUE 
-#&gt;              score_error_NA        assess_downloads_1yr 
-#&gt;                        TRUE                        TRUE 
-#&gt;             assess_has_news               as_pkg_metric 
-#&gt;                        TRUE                        TRUE 
-#&gt;             get_assessments        assess_has_vignettes 
-#&gt;                        TRUE                        TRUE 
-#&gt;         assess_has_examples   assess_has_source_control 
-#&gt;                        TRUE                        TRUE 
-#&gt;  assess_has_bug_reports_url         assess_news_current 
-#&gt;                        TRUE                        TRUE 
-#&gt;                     pkg_ref                  as_pkg_ref 
-#&gt;                        TRUE                        TRUE 
-#&gt;            score_error_zero 
-#&gt;                        TRUE 
+#&gt; $remote_checks
+#&gt; [1] NA
+#&gt; attr(,&quot;class&quot;)
+#&gt; [1] &quot;pkg_metric_na&quot;            &quot;pkg_metric_condition&quot;    
+#&gt; [3] &quot;pkg_metric_remote_checks&quot; &quot;pkg_metric&quot;              
+#&gt; [5] &quot;logical&quot;                 
+#&gt; attr(,&quot;label&quot;)
+#&gt; [1] &quot;Number of OS flavors that passed/warned/errored on R CMD check&quot;
+#&gt; 
+#&gt; $news_current
+#&gt; [1] TRUE
+#&gt; attr(,&quot;class&quot;)
+#&gt; [1] &quot;pkg_metric_news_current&quot; &quot;pkg_metric&quot;             
+#&gt; [3] &quot;logical&quot;                
+#&gt; attr(,&quot;label&quot;)
+#&gt; [1] &quot;NEWS file contains entry for current version number&quot;
 #&gt; 
 #&gt; $r_cmd_check
 #&gt; [1] NA
@@ -670,6 +648,109 @@ namespace.</p>
 #&gt; [4] &quot;pkg_metric&quot;             &quot;logical&quot;               
 #&gt; attr(,&quot;label&quot;)
 #&gt; [1] &quot;Package check results&quot;
+#&gt; 
+#&gt; $exported_namespace
+#&gt;  [1] &quot;assess_covr_coverage&quot;        &quot;assessment_error_as_warning&quot;
+#&gt;  [3] &quot;as_pkg_metric&quot;               &quot;assess_has_news&quot;            
+#&gt;  [5] &quot;score_error_zero&quot;            &quot;assess_remote_checks&quot;       
+#&gt;  [7] &quot;pkg_metric&quot;                  &quot;assess_news_current&quot;        
+#&gt;  [9] &quot;assess_r_cmd_check&quot;          &quot;pkg_score&quot;                  
+#&gt; [11] &quot;pkg_assess&quot;                  &quot;as_pkg_ref&quot;                 
+#&gt; [13] &quot;score_error_NA&quot;              &quot;metric_score&quot;               
+#&gt; [15] &quot;assess_exported_namespace&quot;   &quot;assess_has_vignettes&quot;       
+#&gt; [17] &quot;assess_export_help&quot;          &quot;assess_has_website&quot;         
+#&gt; [19] &quot;score_error_default&quot;         &quot;assessment_error_throw&quot;     
+#&gt; [21] &quot;assess_has_maintainer&quot;       &quot;assess_last_30_bugs_status&quot; 
+#&gt; [23] &quot;assess_size_codebase&quot;        &quot;all_assessments&quot;            
+#&gt; [25] &quot;assess_has_source_control&quot;   &quot;assess_has_bug_reports_url&quot; 
+#&gt; [27] &quot;assess_downloads_1yr&quot;        &quot;assess_reverse_dependencies&quot;
+#&gt; [29] &quot;get_assessments&quot;             &quot;assess_has_examples&quot;        
+#&gt; [31] &quot;summarize_scores&quot;            &quot;pkg_ref&quot;                    
+#&gt; [33] &quot;assessment_error_empty&quot;      &quot;assess_dependencies&quot;        
+#&gt; [35] &quot;assess_license&quot;             
+#&gt; 
+#&gt; $has_vignettes
+#&gt; [1] 0
+#&gt; 
+#&gt; $export_help
+#&gt;        assess_covr_coverage assessment_error_as_warning 
+#&gt;                        TRUE                        TRUE 
+#&gt;               as_pkg_metric             assess_has_news 
+#&gt;                        TRUE                        TRUE 
+#&gt;            score_error_zero        assess_remote_checks 
+#&gt;                        TRUE                        TRUE 
+#&gt;                  pkg_metric         assess_news_current 
+#&gt;                        TRUE                        TRUE 
+#&gt;          assess_r_cmd_check                   pkg_score 
+#&gt;                        TRUE                        TRUE 
+#&gt;                  pkg_assess                  as_pkg_ref 
+#&gt;                        TRUE                        TRUE 
+#&gt;              score_error_NA                metric_score 
+#&gt;                        TRUE                        TRUE 
+#&gt;   assess_exported_namespace        assess_has_vignettes 
+#&gt;                        TRUE                        TRUE 
+#&gt;          assess_export_help          assess_has_website 
+#&gt;                        TRUE                        TRUE 
+#&gt;         score_error_default      assessment_error_throw 
+#&gt;                        TRUE                        TRUE 
+#&gt;       assess_has_maintainer  assess_last_30_bugs_status 
+#&gt;                        TRUE                        TRUE 
+#&gt;        assess_size_codebase             all_assessments 
+#&gt;                        TRUE                        TRUE 
+#&gt;   assess_has_source_control  assess_has_bug_reports_url 
+#&gt;                        TRUE                        TRUE 
+#&gt;        assess_downloads_1yr assess_reverse_dependencies 
+#&gt;                        TRUE                        TRUE 
+#&gt;             get_assessments         assess_has_examples 
+#&gt;                        TRUE                        TRUE 
+#&gt;            summarize_scores                     pkg_ref 
+#&gt;                        TRUE                        TRUE 
+#&gt;      assessment_error_empty         assess_dependencies 
+#&gt;                        TRUE                        TRUE 
+#&gt;              assess_license 
+#&gt;                        TRUE 
+#&gt; 
+#&gt; $has_website
+#&gt; [1] &quot;https://pharmar.github.io/riskmetric/&quot;
+#&gt; [2] &quot;https://github.com/pharmaR/riskmetric&quot;
+#&gt; 
+#&gt; $has_maintainer
+#&gt; [1] &quot;Eli Miller &lt;eli.miller@atorusresearch.com&gt;&quot;
+#&gt; 
+#&gt; $bugs_status
+#&gt;  [1] FALSE FALSE FALSE FALSE FALSE  TRUE FALSE FALSE  TRUE FALSE FALSE FALSE
+#&gt; [13]  TRUE  TRUE  TRUE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE
+#&gt; [25] FALSE FALSE FALSE FALSE FALSE FALSE
+#&gt; 
+#&gt; $size_codebase
+#&gt; &lt;simpleError in attachNamespace(x$name): namespace is already attached&gt;
+#&gt; 
+#&gt; $has_source_control
+#&gt; [1] &quot;https://github.com/pharmaR/riskmetric&quot;
+#&gt; 
+#&gt; $has_bug_reports_url
+#&gt; [1] 1
+#&gt; attr(,&quot;class&quot;)
+#&gt; [1] &quot;pkg_metric_has_bug_reports_url&quot; &quot;pkg_metric&quot;                    
+#&gt; [3] &quot;integer&quot;                       
+#&gt; attr(,&quot;label&quot;)
+#&gt; [1] &quot;presence of a bug reports url in repository&quot;
+#&gt; 
+#&gt; $downloads_1yr
+#&gt; [1] 3978
+#&gt; 
+#&gt; $reverse_dependencies
+#&gt; character(0)
+#&gt; 
+#&gt; $has_examples
+#&gt;   [1] TRUE TRUE TRUE TRUE TRUE TRUE TRUE TRUE TRUE TRUE TRUE TRUE TRUE TRUE TRUE
+#&gt;  [16] TRUE TRUE TRUE TRUE TRUE TRUE TRUE TRUE TRUE TRUE TRUE TRUE TRUE TRUE TRUE
+#&gt;  [31] TRUE TRUE TRUE TRUE TRUE TRUE TRUE TRUE TRUE TRUE TRUE TRUE TRUE TRUE TRUE
+#&gt;  [46] TRUE TRUE TRUE TRUE TRUE TRUE TRUE TRUE TRUE TRUE TRUE TRUE TRUE TRUE TRUE
+#&gt;  [61] TRUE TRUE TRUE TRUE TRUE TRUE TRUE TRUE TRUE TRUE TRUE TRUE TRUE TRUE TRUE
+#&gt;  [76] TRUE TRUE TRUE TRUE TRUE TRUE TRUE TRUE TRUE TRUE TRUE TRUE TRUE TRUE TRUE
+#&gt;  [91] TRUE TRUE TRUE TRUE TRUE TRUE TRUE TRUE TRUE TRUE TRUE TRUE TRUE TRUE TRUE
+#&gt; [106] TRUE TRUE
 #&gt; 
 #&gt; $dependencies
 #&gt;        package    type
@@ -690,104 +771,23 @@ namespace.</p>
 #&gt; 15     pkgload Imports
 #&gt; 16    devtools Imports
 #&gt; 
-#&gt; $reverse_dependencies
-#&gt; character(0)
-#&gt; 
 #&gt; $license
-#&gt; [1] &quot;MIT + file LICENSE&quot;
-#&gt; 
-#&gt; $has_maintainer
-#&gt; [1] &quot;Eli Miller &lt;eli.miller@atorusresearch.com&gt;&quot;
-#&gt; 
-#&gt; $remote_checks
-#&gt; [1] NA
-#&gt; attr(,&quot;class&quot;)
-#&gt; [1] &quot;pkg_metric_na&quot;            &quot;pkg_metric_condition&quot;    
-#&gt; [3] &quot;pkg_metric_remote_checks&quot; &quot;pkg_metric&quot;              
-#&gt; [5] &quot;logical&quot;                 
-#&gt; attr(,&quot;label&quot;)
-#&gt; [1] &quot;Number of OS flavors that passed/warned/errored on R CMD check&quot;
-#&gt; 
-#&gt; $exported_namespace
-#&gt;  [1] &quot;summarize_scores&quot;            &quot;assess_last_30_bugs_status&quot; 
-#&gt;  [3] &quot;pkg_assess&quot;                  &quot;assess_covr_coverage&quot;       
-#&gt;  [5] &quot;assess_size_codebase&quot;        &quot;assessment_error_as_warning&quot;
-#&gt;  [7] &quot;assessment_error_throw&quot;      &quot;assess_export_help&quot;         
-#&gt;  [9] &quot;assessment_error_empty&quot;      &quot;pkg_metric&quot;                 
-#&gt; [11] &quot;assess_r_cmd_check&quot;          &quot;assess_dependencies&quot;        
-#&gt; [13] &quot;assess_reverse_dependencies&quot; &quot;all_assessments&quot;            
-#&gt; [15] &quot;score_error_default&quot;         &quot;pkg_score&quot;                  
-#&gt; [17] &quot;assess_license&quot;              &quot;assess_has_maintainer&quot;      
-#&gt; [19] &quot;assess_remote_checks&quot;        &quot;assess_exported_namespace&quot;  
-#&gt; [21] &quot;assess_has_website&quot;          &quot;metric_score&quot;               
-#&gt; [23] &quot;score_error_NA&quot;              &quot;assess_downloads_1yr&quot;       
-#&gt; [25] &quot;assess_has_news&quot;             &quot;as_pkg_metric&quot;              
-#&gt; [27] &quot;get_assessments&quot;             &quot;assess_has_vignettes&quot;       
-#&gt; [29] &quot;assess_has_examples&quot;         &quot;assess_has_source_control&quot;  
-#&gt; [31] &quot;assess_has_bug_reports_url&quot;  &quot;assess_news_current&quot;        
-#&gt; [33] &quot;pkg_ref&quot;                     &quot;as_pkg_ref&quot;                 
-#&gt; [35] &quot;score_error_zero&quot;           
-#&gt; 
-#&gt; $has_website
-#&gt; [1] &quot;https://pharmar.github.io/riskmetric/&quot;
-#&gt; [2] &quot;https://github.com/pharmaR/riskmetric&quot;
-#&gt; 
-#&gt; $downloads_1yr
-#&gt; [1] 3693
-#&gt; 
-#&gt; $has_news
-#&gt; [1] 1
-#&gt; attr(,&quot;class&quot;)
-#&gt; [1] &quot;pkg_metric_has_news&quot; &quot;pkg_metric&quot;          &quot;integer&quot;            
-#&gt; attr(,&quot;label&quot;)
-#&gt; [1] &quot;number of discovered NEWS files&quot;
-#&gt; 
-#&gt; $has_vignettes
-#&gt; [1] 0
-#&gt; 
-#&gt; $has_examples
-#&gt;   [1] TRUE TRUE TRUE TRUE TRUE TRUE TRUE TRUE TRUE TRUE TRUE TRUE TRUE TRUE TRUE
-#&gt;  [16] TRUE TRUE TRUE TRUE TRUE TRUE TRUE TRUE TRUE TRUE TRUE TRUE TRUE TRUE TRUE
-#&gt;  [31] TRUE TRUE TRUE TRUE TRUE TRUE TRUE TRUE TRUE TRUE TRUE TRUE TRUE TRUE TRUE
-#&gt;  [46] TRUE TRUE TRUE TRUE TRUE TRUE TRUE TRUE TRUE TRUE TRUE TRUE TRUE TRUE TRUE
-#&gt;  [61] TRUE TRUE TRUE TRUE TRUE TRUE TRUE TRUE TRUE TRUE TRUE TRUE TRUE TRUE TRUE
-#&gt;  [76] TRUE TRUE TRUE TRUE TRUE TRUE TRUE TRUE TRUE TRUE TRUE TRUE TRUE TRUE TRUE
-#&gt;  [91] TRUE TRUE TRUE TRUE TRUE TRUE TRUE TRUE TRUE TRUE TRUE TRUE TRUE TRUE TRUE
-#&gt; [106] TRUE TRUE
-#&gt; 
-#&gt; $has_source_control
-#&gt; [1] &quot;https://github.com/pharmaR/riskmetric&quot;
-#&gt; 
-#&gt; $has_bug_reports_url
-#&gt; [1] 1
-#&gt; attr(,&quot;class&quot;)
-#&gt; [1] &quot;pkg_metric_has_bug_reports_url&quot; &quot;pkg_metric&quot;                    
-#&gt; [3] &quot;integer&quot;                       
-#&gt; attr(,&quot;label&quot;)
-#&gt; [1] &quot;presence of a bug reports url in repository&quot;
-#&gt; 
-#&gt; $news_current
-#&gt; [1] TRUE
-#&gt; attr(,&quot;class&quot;)
-#&gt; [1] &quot;pkg_metric_news_current&quot; &quot;pkg_metric&quot;             
-#&gt; [3] &quot;logical&quot;                
-#&gt; attr(,&quot;label&quot;)
-#&gt; [1] &quot;NEWS file contains entry for current version number&quot;</code></pre>
+#&gt; [1] &quot;MIT + file LICENSE&quot;</code></pre>
 <p>Since that is a lot to take in, <code>pkg_assess</code> also operates
 on <code>tibble</code>s, returning a cleaner output that might be easier
 to sort through when assessing a package.</p>
-<div class="sourceCode" id="cb9"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="fu">pkg_assess</span>(<span class="fu">as_tibble</span>(riskmetric_pkg_ref))</span></code></pre></div>
+<div class="sourceCode" id="cb9"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb9-1"><a href="#cb9-1" tabindex="-1"></a><span class="fu">pkg_assess</span>(<span class="fu">as_tibble</span>(riskmetric_pkg_ref))</span></code></pre></div>
 <pre><code>#&gt; # A tibble: 1 × 22
-#&gt;   package    version pkg_ref             bugs_sta…¹ covr_…² size_codeb…³ expor…⁴
-#&gt;   &lt;chr&gt;      &lt;chr&gt;   &lt;lst_f_p_&gt;          &lt;lst_f_p_&gt; &lt;lst_f&gt; &lt;lst_f_p_&gt;   &lt;lst_f&gt;
-#&gt; 1 riskmetric 0.2.3   riskmetric&lt;install&gt; &lt;lgl [30]&gt; NA      &lt;error&gt;      &lt;lgl&gt;  
-#&gt; # … with 15 more variables: r_cmd_check &lt;lst_f_p_&gt;, dependencies &lt;lst_f_p_&gt;,
-#&gt; #   reverse_dependencies &lt;lst_f_p_&gt;, license &lt;lst_f_p_&gt;,
-#&gt; #   has_maintainer &lt;lst_f_p_&gt;, remote_checks &lt;lst_f_p_&gt;,
-#&gt; #   exported_namespace &lt;lst_f_p_&gt;, has_website &lt;lst_f_p_&gt;,
-#&gt; #   downloads_1yr &lt;lst_f_p_&gt;, has_news &lt;lst_f_p_&gt;, has_vignettes &lt;lst_f_p_&gt;,
-#&gt; #   has_examples &lt;lst_f_p_&gt;, has_source_control &lt;lst_f_p_&gt;,
-#&gt; #   has_bug_reports_url &lt;lst_f_p_&gt;, news_current &lt;lst_f_p_&gt;, and abbreviated …</code></pre>
+#&gt;   package    version pkg_ref             covr_coverage has_news   remote_checks
+#&gt;   &lt;chr&gt;      &lt;chr&gt;   &lt;lst_f_p_&gt;          &lt;lst_f_p_&gt;    &lt;lst_f_p_&gt; &lt;lst_f_p_&gt;   
+#&gt; 1 riskmetric 0.2.4   riskmetric&lt;install&gt; NA            1          NA           
+#&gt; # ℹ 16 more variables: news_current &lt;lst_f_p_&gt;, r_cmd_check &lt;lst_f_p_&gt;,
+#&gt; #   exported_namespace &lt;lst_f_p_&gt;, has_vignettes &lt;lst_f_p_&gt;,
+#&gt; #   export_help &lt;lst_f_p_&gt;, has_website &lt;lst_f_p_&gt;, has_maintainer &lt;lst_f_p_&gt;,
+#&gt; #   bugs_status &lt;lst_f_p_&gt;, size_codebase &lt;lst_f_p_&gt;,
+#&gt; #   has_source_control &lt;lst_f_p_&gt;, has_bug_reports_url &lt;lst_f_p_&gt;,
+#&gt; #   downloads_1yr &lt;lst_f_p_&gt;, reverse_dependencies &lt;lst_f_p_&gt;,
+#&gt; #   has_examples &lt;lst_f_p_&gt;, dependencies &lt;lst_f_p_&gt;, license &lt;lst_f_p_&gt;</code></pre>
 </div>
 <div id="scoring-package-metrics" class="section level2">
 <h2>Scoring package metrics</h2>
@@ -796,25 +796,25 @@ it to a quantified representation of risk.</p>
 <p>There is a single scoring function, <code>metric_score</code>, that
 dispatches based on the class of the metric that is passed to it to
 interpret the atomic metric result.</p>
-<div class="sourceCode" id="cb11"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a><span class="fu">metric_score</span>(riskmetric_export_help_metric)</span>
-<span id="cb11-2"><a href="#cb11-2" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; [1] 1</span></span></code></pre></div>
+<div class="sourceCode" id="cb11"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb11-1"><a href="#cb11-1" tabindex="-1"></a><span class="fu">metric_score</span>(riskmetric_export_help_metric)</span>
+<span id="cb11-2"><a href="#cb11-2" tabindex="-1"></a><span class="co">#&gt; [1] 1</span></span></code></pre></div>
 <p>For convenience, <code>pkg_score</code> is provided as a convenience
 to operate on <code>pkg_ref</code> objects directly. It can also operate
 on the <code>tibble</code> produced by <code>pkg_assess</code> applied
 to a <code>pkg_ref</code> <code>tibble</code>, providing a new
 <code>tibble</code> with scored metrics.</p>
-<div class="sourceCode" id="cb12"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a><span class="fu">pkg_score</span>(<span class="fu">pkg_assess</span>(<span class="fu">as_tibble</span>(<span class="fu">pkg_ref</span>(<span class="st">&quot;riskmetric&quot;</span>))))</span>
-<span id="cb12-2"><a href="#cb12-2" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; # A tibble: 1 × 23</span></span>
-<span id="cb12-3"><a href="#cb12-3" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt;   package  version pkg_ref             pkg_s…¹ bugs_st…² covr_…³ size_…⁴ expor…⁵</span></span>
-<span id="cb12-4"><a href="#cb12-4" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt;   &lt;chr&gt;    &lt;chr&gt;   &lt;lst_f_p_&gt;            &lt;dbl&gt; &lt;pkg_sco&gt; &lt;pkg_s&gt; &lt;pkg_s&gt; &lt;pkg_s&gt;</span></span>
-<span id="cb12-5"><a href="#cb12-5" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 1 riskmet… 0.2.3   riskmetric&lt;install&gt;   0.524 0.3333333 NA      NA      1      </span></span>
-<span id="cb12-6"><a href="#cb12-6" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; # … with 15 more variables: r_cmd_check &lt;pkg_scor&gt;, dependencies &lt;pkg_scor&gt;,</span></span>
-<span id="cb12-7"><a href="#cb12-7" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; #   reverse_dependencies &lt;pkg_scor&gt;, license &lt;pkg_scor&gt;,</span></span>
-<span id="cb12-8"><a href="#cb12-8" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; #   has_maintainer &lt;pkg_scor&gt;, remote_checks &lt;pkg_scor&gt;,</span></span>
-<span id="cb12-9"><a href="#cb12-9" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; #   exported_namespace &lt;pkg_scor&gt;, has_website &lt;pkg_scor&gt;,</span></span>
-<span id="cb12-10"><a href="#cb12-10" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; #   downloads_1yr &lt;pkg_scor&gt;, has_news &lt;pkg_scor&gt;, has_vignettes &lt;pkg_scor&gt;,</span></span>
-<span id="cb12-11"><a href="#cb12-11" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; #   has_examples &lt;pkg_scor&gt;, has_source_control &lt;pkg_scor&gt;,</span></span>
-<span id="cb12-12"><a href="#cb12-12" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; #   has_bug_reports_url &lt;pkg_scor&gt;, news_current &lt;pkg_scor&gt;, and abbreviated …</span></span></code></pre></div>
+<div class="sourceCode" id="cb12"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb12-1"><a href="#cb12-1" tabindex="-1"></a><span class="fu">pkg_score</span>(<span class="fu">pkg_assess</span>(<span class="fu">as_tibble</span>(<span class="fu">pkg_ref</span>(<span class="st">&quot;riskmetric&quot;</span>))))</span>
+<span id="cb12-2"><a href="#cb12-2" tabindex="-1"></a><span class="co">#&gt; # A tibble: 1 × 23</span></span>
+<span id="cb12-3"><a href="#cb12-3" tabindex="-1"></a><span class="co">#&gt;   package    version pkg_ref             pkg_score covr_coverage has_news  </span></span>
+<span id="cb12-4"><a href="#cb12-4" tabindex="-1"></a><span class="co">#&gt;   &lt;chr&gt;      &lt;chr&gt;   &lt;lst_f_p_&gt;              &lt;dbl&gt; &lt;pkg_scor&gt;    &lt;pkg_scor&gt;</span></span>
+<span id="cb12-5"><a href="#cb12-5" tabindex="-1"></a><span class="co">#&gt; 1 riskmetric 0.2.4   riskmetric&lt;install&gt;     0.532 NA            1         </span></span>
+<span id="cb12-6"><a href="#cb12-6" tabindex="-1"></a><span class="co">#&gt; # ℹ 17 more variables: remote_checks &lt;pkg_scor&gt;, news_current &lt;pkg_scor&gt;,</span></span>
+<span id="cb12-7"><a href="#cb12-7" tabindex="-1"></a><span class="co">#&gt; #   r_cmd_check &lt;pkg_scor&gt;, exported_namespace &lt;pkg_scor&gt;,</span></span>
+<span id="cb12-8"><a href="#cb12-8" tabindex="-1"></a><span class="co">#&gt; #   has_vignettes &lt;pkg_scor&gt;, export_help &lt;pkg_scor&gt;, has_website &lt;pkg_scor&gt;,</span></span>
+<span id="cb12-9"><a href="#cb12-9" tabindex="-1"></a><span class="co">#&gt; #   has_maintainer &lt;pkg_scor&gt;, bugs_status &lt;pkg_scor&gt;,</span></span>
+<span id="cb12-10"><a href="#cb12-10" tabindex="-1"></a><span class="co">#&gt; #   size_codebase &lt;pkg_scor&gt;, has_source_control &lt;pkg_scor&gt;,</span></span>
+<span id="cb12-11"><a href="#cb12-11" tabindex="-1"></a><span class="co">#&gt; #   has_bug_reports_url &lt;pkg_scor&gt;, downloads_1yr &lt;pkg_scor&gt;,</span></span>
+<span id="cb12-12"><a href="#cb12-12" tabindex="-1"></a><span class="co">#&gt; #   reverse_dependencies &lt;pkg_scor&gt;, has_examples &lt;pkg_scor&gt;, …</span></span></code></pre></div>
 <blockquote>
 <p>Note that <code>pkg_assess</code> and <code>pkg_score</code> accepts
 an <code>error_handler</code> argument which determines how errors are
@@ -840,39 +840,39 @@ into a <code>tibble</code>, automatically populating some useful index
 columns like <code>package</code> and <code>version</code>. To clean
 things up further we can use the <code>magrittr</code> pipe
 (<code>%&gt;%</code>) to chain these commands together.</p>
-<div class="sourceCode" id="cb13"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a>package_tbl <span class="ot">&lt;-</span> <span class="fu">pkg_ref</span>(<span class="fu">c</span>(<span class="st">&quot;riskmetric&quot;</span>, <span class="st">&quot;utils&quot;</span>, <span class="st">&quot;tools&quot;</span>)) <span class="sc">%&gt;%</span></span>
-<span id="cb13-2"><a href="#cb13-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">as_tibble</span>()</span></code></pre></div>
+<div class="sourceCode" id="cb13"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb13-1"><a href="#cb13-1" tabindex="-1"></a>package_tbl <span class="ot">&lt;-</span> <span class="fu">pkg_ref</span>(<span class="fu">c</span>(<span class="st">&quot;riskmetric&quot;</span>, <span class="st">&quot;utils&quot;</span>, <span class="st">&quot;tools&quot;</span>)) <span class="sc">%&gt;%</span></span>
+<span id="cb13-2"><a href="#cb13-2" tabindex="-1"></a>  <span class="fu">as_tibble</span>()</span></code></pre></div>
 </div>
 <div id="the-riskmetric-workflow-on-multiple-packages" class="section level2">
 <h2>The <code>riskmetric</code> workflow on multiple packages</h2>
 <p><code>pkg_assess</code> and <code>pkg_score</code> can operate on
 <code>tibble</code>s, making it easy to simultaneously test an entire
 cohort of packages at once.</p>
-<div class="sourceCode" id="cb14"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a>package_tbl <span class="sc">%&gt;%</span></span>
-<span id="cb14-2"><a href="#cb14-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">pkg_assess</span>() <span class="sc">%&gt;%</span></span>
-<span id="cb14-3"><a href="#cb14-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">pkg_score</span>()</span>
-<span id="cb14-4"><a href="#cb14-4" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; # A tibble: 3 × 23</span></span>
-<span id="cb14-5"><a href="#cb14-5" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt;   package    version pkg_ref             pkg_score bugs_status covr_co…¹ size_…²</span></span>
-<span id="cb14-6"><a href="#cb14-6" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt;   &lt;chr&gt;      &lt;chr&gt;   &lt;lst_f_p_&gt;              &lt;dbl&gt; &lt;pkg_scor&gt;  &lt;pkg_sco&gt; &lt;pkg_s&gt;</span></span>
-<span id="cb14-7"><a href="#cb14-7" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 1 riskmetric 0.2.3   riskmetric&lt;install&gt;     0.524 0.3333333   NA        NA     </span></span>
-<span id="cb14-8"><a href="#cb14-8" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 2 utils      4.2.0   utils&lt;install&gt;          0.687        NA   NA        NA     </span></span>
-<span id="cb14-9"><a href="#cb14-9" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 3 tools      4.2.0   tools&lt;install&gt;          0.733        NA   NA        NA     </span></span>
-<span id="cb14-10"><a href="#cb14-10" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; # … with 16 more variables: export_help &lt;pkg_scor&gt;, r_cmd_check &lt;pkg_scor&gt;,</span></span>
-<span id="cb14-11"><a href="#cb14-11" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; #   dependencies &lt;pkg_scor&gt;, reverse_dependencies &lt;pkg_scor&gt;,</span></span>
-<span id="cb14-12"><a href="#cb14-12" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; #   license &lt;pkg_scor&gt;, has_maintainer &lt;pkg_scor&gt;, remote_checks &lt;pkg_scor&gt;,</span></span>
-<span id="cb14-13"><a href="#cb14-13" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; #   exported_namespace &lt;pkg_scor&gt;, has_website &lt;pkg_scor&gt;,</span></span>
-<span id="cb14-14"><a href="#cb14-14" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; #   downloads_1yr &lt;pkg_scor&gt;, has_news &lt;pkg_scor&gt;, has_vignettes &lt;pkg_scor&gt;,</span></span>
-<span id="cb14-15"><a href="#cb14-15" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; #   has_examples &lt;pkg_scor&gt;, has_source_control &lt;pkg_scor&gt;,</span></span>
-<span id="cb14-16"><a href="#cb14-16" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; #   has_bug_reports_url &lt;pkg_scor&gt;, news_current &lt;pkg_scor&gt;, and abbreviated …</span></span></code></pre></div>
+<div class="sourceCode" id="cb14"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb14-1"><a href="#cb14-1" tabindex="-1"></a>package_tbl <span class="sc">%&gt;%</span></span>
+<span id="cb14-2"><a href="#cb14-2" tabindex="-1"></a>  <span class="fu">pkg_assess</span>() <span class="sc">%&gt;%</span></span>
+<span id="cb14-3"><a href="#cb14-3" tabindex="-1"></a>  <span class="fu">pkg_score</span>()</span>
+<span id="cb14-4"><a href="#cb14-4" tabindex="-1"></a><span class="co">#&gt; # A tibble: 3 × 23</span></span>
+<span id="cb14-5"><a href="#cb14-5" tabindex="-1"></a><span class="co">#&gt;   package    version pkg_ref             pkg_score covr_coverage has_news  </span></span>
+<span id="cb14-6"><a href="#cb14-6" tabindex="-1"></a><span class="co">#&gt;   &lt;chr&gt;      &lt;chr&gt;   &lt;lst_f_p_&gt;              &lt;dbl&gt; &lt;pkg_scor&gt;    &lt;pkg_scor&gt;</span></span>
+<span id="cb14-7"><a href="#cb14-7" tabindex="-1"></a><span class="co">#&gt; 1 riskmetric 0.2.4   riskmetric&lt;install&gt;     0.532 NA            1         </span></span>
+<span id="cb14-8"><a href="#cb14-8" tabindex="-1"></a><span class="co">#&gt; 2 utils      4.3.0   utils&lt;install&gt;          0.687 NA            0         </span></span>
+<span id="cb14-9"><a href="#cb14-9" tabindex="-1"></a><span class="co">#&gt; 3 tools      4.3.0   tools&lt;install&gt;          0.734 NA            0         </span></span>
+<span id="cb14-10"><a href="#cb14-10" tabindex="-1"></a><span class="co">#&gt; # ℹ 17 more variables: remote_checks &lt;pkg_scor&gt;, news_current &lt;pkg_scor&gt;,</span></span>
+<span id="cb14-11"><a href="#cb14-11" tabindex="-1"></a><span class="co">#&gt; #   r_cmd_check &lt;pkg_scor&gt;, exported_namespace &lt;pkg_scor&gt;,</span></span>
+<span id="cb14-12"><a href="#cb14-12" tabindex="-1"></a><span class="co">#&gt; #   has_vignettes &lt;pkg_scor&gt;, export_help &lt;pkg_scor&gt;, has_website &lt;pkg_scor&gt;,</span></span>
+<span id="cb14-13"><a href="#cb14-13" tabindex="-1"></a><span class="co">#&gt; #   has_maintainer &lt;pkg_scor&gt;, bugs_status &lt;pkg_scor&gt;,</span></span>
+<span id="cb14-14"><a href="#cb14-14" tabindex="-1"></a><span class="co">#&gt; #   size_codebase &lt;pkg_scor&gt;, has_source_control &lt;pkg_scor&gt;,</span></span>
+<span id="cb14-15"><a href="#cb14-15" tabindex="-1"></a><span class="co">#&gt; #   has_bug_reports_url &lt;pkg_scor&gt;, downloads_1yr &lt;pkg_scor&gt;,</span></span>
+<span id="cb14-16"><a href="#cb14-16" tabindex="-1"></a><span class="co">#&gt; #   reverse_dependencies &lt;pkg_scor&gt;, has_examples &lt;pkg_scor&gt;, …</span></span></code></pre></div>
 <p>Notice that a summary column, <code>pkg_score</code>, is included in
 addition to our metric scores. This value is a shorthand for aggregating
 a weighted average of risk scores across <code>tibble</code> columns
 using <code>summarize_scores</code>.</p>
-<div class="sourceCode" id="cb15"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a>package_tbl <span class="sc">%&gt;%</span></span>
-<span id="cb15-2"><a href="#cb15-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">pkg_assess</span>() <span class="sc">%&gt;%</span></span>
-<span id="cb15-3"><a href="#cb15-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">pkg_score</span>() <span class="sc">%&gt;%</span></span>
-<span id="cb15-4"><a href="#cb15-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">summarize_scores</span>()</span>
-<span id="cb15-5"><a href="#cb15-5" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; [1] 0.5237261 0.6872104 0.7333352</span></span></code></pre></div>
+<div class="sourceCode" id="cb15"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb15-1"><a href="#cb15-1" tabindex="-1"></a>package_tbl <span class="sc">%&gt;%</span></span>
+<span id="cb15-2"><a href="#cb15-2" tabindex="-1"></a>  <span class="fu">pkg_assess</span>() <span class="sc">%&gt;%</span></span>
+<span id="cb15-3"><a href="#cb15-3" tabindex="-1"></a>  <span class="fu">pkg_score</span>() <span class="sc">%&gt;%</span></span>
+<span id="cb15-4"><a href="#cb15-4" tabindex="-1"></a>  <span class="fu">summarize_scores</span>()</span>
+<span id="cb15-5"><a href="#cb15-5" tabindex="-1"></a><span class="co">#&gt; [1] 0.5324029 0.6870599 0.7343252</span></span></code></pre></div>
 </div>
 </div>
 <div id="how-you-can-help" class="section level1">

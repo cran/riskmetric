@@ -12,7 +12,7 @@
 
 <meta name="author" content="R Validation Hub" />
 
-<meta name="date" content="2023-08-31" />
+<meta name="date" content="2024-01-09" />
 
 <title>Extending riskmetric</title>
 
@@ -340,7 +340,7 @@ code > span.er { color: #a61717; background-color: #e3d2d2; }
 
 <h1 class="title toc-ignore">Extending riskmetric</h1>
 <h4 class="author">R Validation Hub</h4>
-<h4 class="date">2023-08-31</h4>
+<h4 class="date">2024-01-09</h4>
 
 
 
@@ -426,14 +426,14 @@ user-friendly label for the assessment in this <code>tibble</code>.</p>
 package high risk if the name does not start with “r”. We’ll need to
 make a <code>pkg_metric</code> object containing the first letter of the
 name.</p>
-<div class="sourceCode" id="cb3"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>assess_name_first_letter <span class="ot">&lt;-</span> <span class="cf">function</span>(x, ...) {</span>
-<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">UseMethod</span>(<span class="st">&quot;assess_name_first_letter&quot;</span>)</span>
-<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a>}</span>
-<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a><span class="fu">attr</span>(assess_name_first_letter, <span class="st">&quot;column_name&quot;</span>) <span class="ot">&lt;-</span> <span class="st">&quot;name_first_letter&quot;</span></span>
-<span id="cb3-5"><a href="#cb3-5" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb3-6"><a href="#cb3-6" aria-hidden="true" tabindex="-1"></a>assess_name_first_letter.pkg_ref <span class="ot">&lt;-</span> <span class="cf">function</span>(x, ...) {</span>
-<span id="cb3-7"><a href="#cb3-7" aria-hidden="true" tabindex="-1"></a>  <span class="fu">pkg_metric</span>(<span class="fu">substr</span>(x<span class="sc">$</span>name, <span class="dv">0</span>, <span class="dv">1</span>), <span class="at">class =</span> <span class="st">&quot;pkg_metric_name_first_letter&quot;</span>)</span>
-<span id="cb3-8"><a href="#cb3-8" aria-hidden="true" tabindex="-1"></a>} </span></code></pre></div>
+<div class="sourceCode" id="cb3"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" tabindex="-1"></a>assess_name_first_letter <span class="ot">&lt;-</span> <span class="cf">function</span>(x, ...) {</span>
+<span id="cb3-2"><a href="#cb3-2" tabindex="-1"></a>  <span class="fu">UseMethod</span>(<span class="st">&quot;assess_name_first_letter&quot;</span>)</span>
+<span id="cb3-3"><a href="#cb3-3" tabindex="-1"></a>}</span>
+<span id="cb3-4"><a href="#cb3-4" tabindex="-1"></a><span class="fu">attr</span>(assess_name_first_letter, <span class="st">&quot;column_name&quot;</span>) <span class="ot">&lt;-</span> <span class="st">&quot;name_first_letter&quot;</span></span>
+<span id="cb3-5"><a href="#cb3-5" tabindex="-1"></a></span>
+<span id="cb3-6"><a href="#cb3-6" tabindex="-1"></a>assess_name_first_letter.pkg_ref <span class="ot">&lt;-</span> <span class="cf">function</span>(x, ...) {</span>
+<span id="cb3-7"><a href="#cb3-7" tabindex="-1"></a>  <span class="fu">pkg_metric</span>(<span class="fu">substr</span>(x<span class="sc">$</span>name, <span class="dv">0</span>, <span class="dv">1</span>), <span class="at">class =</span> <span class="st">&quot;pkg_metric_name_first_letter&quot;</span>)</span>
+<span id="cb3-8"><a href="#cb3-8" tabindex="-1"></a>} </span></code></pre></div>
 </div>
 </div>
 <div id="adding-pkg_ref-metadata" class="section level1">
@@ -463,15 +463,15 @@ so.</p>
 <p>Once these are defined, they’ll be automatically called when the
 field is first accessed by the <code>pkg_ref</code> object, and then
 stored for any downstream uses.</p>
-<div class="sourceCode" id="cb5"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(riskmetric)</span>
-<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a>package <span class="ot">&lt;-</span> <span class="fu">pkg_ref</span>(<span class="st">&quot;riskmetric&quot;</span>)</span></code></pre></div>
-<pre><code>#&gt; &lt;pkg_install, pkg_ref&gt; riskmetric v0.2.3
+<div class="sourceCode" id="cb5"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" tabindex="-1"></a><span class="fu">library</span>(riskmetric)</span>
+<span id="cb5-2"><a href="#cb5-2" tabindex="-1"></a>package <span class="ot">&lt;-</span> <span class="fu">pkg_ref</span>(<span class="st">&quot;riskmetric&quot;</span>)</span></code></pre></div>
+<pre><code>#&gt; &lt;pkg_install, pkg_ref&gt; riskmetric v0.2.4
 #&gt; $path
-#&gt;   [1] &quot;/home/user/username/R/4.2/Resources/library/riskmetric&quot;
+#&gt;   [1] &quot;/home/user/username/R/4.3/Resources/library/riskmetric&quot;
 #&gt; $source
 #&gt;   [1] &quot;pkg_install&quot;
 #&gt; $version
-#&gt;   [1] &#39;0.2.3&#39;
+#&gt;   [1] &#39;0.2.4&#39;
 #&gt; $name
 #&gt;   [1] &quot;riskmetric&quot;
 #&gt; $bug_reports...
@@ -496,7 +496,7 @@ indicates that it hasn’t yet been evaluated with a trailing
 <code>...</code> in the name. When accessed, the object will call a
 caching function to go out and grab the package metadata and return the
 newly derived value.</p>
-<div class="sourceCode" id="cb7"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a>package<span class="sc">$</span>description</span></code></pre></div>
+<div class="sourceCode" id="cb7"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1" tabindex="-1"></a>package<span class="sc">$</span>description</span></code></pre></div>
 <p>Because the <code>pkg_ref</code> object stores an environment,
 caching this value once makes them available for any future attempts to
 access the field. This is helpful because we, as developers of the
@@ -510,20 +510,20 @@ without worry about how metadata is acquired.</p>
 letter. We need to add a new <code>pkg_ref_cache</code> function for our
 field. Thankfully, any subclass of <code>pkg_ref</code> can access the
 first letter the same way, so we just need the one function.</p>
-<div class="sourceCode" id="cb8"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a>pkg_ref_cache.name_first_letter <span class="ot">&lt;-</span> <span class="cf">function</span>(x, name, ...) {</span>
-<span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">substr</span>(x<span class="sc">$</span>name, <span class="dv">0</span>, <span class="dv">1</span>)</span>
-<span id="cb8-3"><a href="#cb8-3" aria-hidden="true" tabindex="-1"></a>}</span></code></pre></div>
+<div class="sourceCode" id="cb8"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb8-1"><a href="#cb8-1" tabindex="-1"></a>pkg_ref_cache.name_first_letter <span class="ot">&lt;-</span> <span class="cf">function</span>(x, name, ...) {</span>
+<span id="cb8-2"><a href="#cb8-2" tabindex="-1"></a>  <span class="fu">substr</span>(x<span class="sc">$</span>name, <span class="dv">0</span>, <span class="dv">1</span>)</span>
+<span id="cb8-3"><a href="#cb8-3" tabindex="-1"></a>}</span></code></pre></div>
 <p>After adding this caching function, we need to make a small
 modification to <code>assess_name_first_letter.pkg_ref</code> in order
 use our newly cached value.</p>
-<div class="sourceCode" id="cb9"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a>assess_name_first_letter.pkg_ref <span class="ot">&lt;-</span> <span class="cf">function</span>(x, ...) {</span>
-<span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">pkg_metric</span>(x<span class="sc">$</span>name_first_letter, <span class="at">class =</span> <span class="st">&quot;pkg_metric_name_first_letter&quot;</span>)</span>
-<span id="cb9-3"><a href="#cb9-3" aria-hidden="true" tabindex="-1"></a>} </span></code></pre></div>
+<div class="sourceCode" id="cb9"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb9-1"><a href="#cb9-1" tabindex="-1"></a>assess_name_first_letter.pkg_ref <span class="ot">&lt;-</span> <span class="cf">function</span>(x, ...) {</span>
+<span id="cb9-2"><a href="#cb9-2" tabindex="-1"></a>  <span class="fu">pkg_metric</span>(x<span class="sc">$</span>name_first_letter, <span class="at">class =</span> <span class="st">&quot;pkg_metric_name_first_letter&quot;</span>)</span>
+<span id="cb9-3"><a href="#cb9-3" tabindex="-1"></a>} </span></code></pre></div>
 <p>Let’s try it out!</p>
-<div class="sourceCode" id="cb10"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a>package<span class="sc">$</span>name</span>
-<span id="cb10-2"><a href="#cb10-2" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; [1] &quot;riskmetric&quot;</span></span>
-<span id="cb10-3"><a href="#cb10-3" aria-hidden="true" tabindex="-1"></a>package<span class="sc">$</span>name_first_letter</span>
-<span id="cb10-4"><a href="#cb10-4" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; [1] &quot;r&quot;</span></span></code></pre></div>
+<div class="sourceCode" id="cb10"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb10-1"><a href="#cb10-1" tabindex="-1"></a>package<span class="sc">$</span>name</span>
+<span id="cb10-2"><a href="#cb10-2" tabindex="-1"></a><span class="co">#&gt; [1] &quot;riskmetric&quot;</span></span>
+<span id="cb10-3"><a href="#cb10-3" tabindex="-1"></a>package<span class="sc">$</span>name_first_letter</span>
+<span id="cb10-4"><a href="#cb10-4" tabindex="-1"></a><span class="co">#&gt; [1] &quot;r&quot;</span></span></code></pre></div>
 </div>
 </div>
 <div id="defining-an-assessment-scoring-function" class="section level1">
@@ -535,9 +535,9 @@ first letter of the package name.</p>
 As a convention, these functions return a numeric value representing how
 well the package conforms to best practices with values between 0 (poor
 practice) and 1 (best practice).</p>
-<div class="sourceCode" id="cb11"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a>metric_score.pkg_metric_name_first_letter <span class="ot">&lt;-</span> <span class="cf">function</span>(x, ...) {</span>
-<span id="cb11-2"><a href="#cb11-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">as.numeric</span>(x <span class="sc">==</span> <span class="st">&quot;r&quot;</span>)</span>
-<span id="cb11-3"><a href="#cb11-3" aria-hidden="true" tabindex="-1"></a>}</span></code></pre></div>
+<div class="sourceCode" id="cb11"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb11-1"><a href="#cb11-1" tabindex="-1"></a>metric_score.pkg_metric_name_first_letter <span class="ot">&lt;-</span> <span class="cf">function</span>(x, ...) {</span>
+<span id="cb11-2"><a href="#cb11-2" tabindex="-1"></a>  <span class="fu">as.numeric</span>(x <span class="sc">==</span> <span class="st">&quot;r&quot;</span>)</span>
+<span id="cb11-3"><a href="#cb11-3" tabindex="-1"></a>}</span></code></pre></div>
 </div>
 <div id="adding-our-assessment-to-the-pkg_assess-verb" class="section level1">
 <h1>Adding our Assessment to the <code>pkg_assess()</code> Verb</h1>
@@ -546,61 +546,61 @@ apply. <code>riskmetric</code> provides a shorthand,
 <code>all_assessments()</code>, to collect all the included assessment
 functions, and you’re free to add to that list to customize your own
 assessment toolkit.</p>
-<div class="sourceCode" id="cb12"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(dplyr)</span>
-<span id="cb12-2"><a href="#cb12-2" aria-hidden="true" tabindex="-1"></a><span class="fu">pkg_ref</span>(<span class="fu">c</span>(<span class="st">&quot;riskmetric&quot;</span>, <span class="st">&quot;utils&quot;</span>, <span class="st">&quot;tools&quot;</span>)) <span class="sc">%&gt;%</span></span>
-<span id="cb12-3"><a href="#cb12-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">as_tibble</span>() <span class="sc">%&gt;%</span></span>
-<span id="cb12-4"><a href="#cb12-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">pkg_assess</span>(<span class="fu">c</span>(<span class="fu">all_assessments</span>(), assess_name_first_letter))</span>
-<span id="cb12-5"><a href="#cb12-5" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; # A tibble: 3 × 23</span></span>
-<span id="cb12-6"><a href="#cb12-6" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt;   package  version pkg_ref             bugs_status covr_c…¹ size_codeb…² expor…³</span></span>
-<span id="cb12-7"><a href="#cb12-7" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt;   &lt;chr&gt;    &lt;chr&gt;   &lt;lst_f_p_&gt;          &lt;lst_f_p_&gt;  &lt;lst_f_&gt; &lt;lst_f_p_&gt;   &lt;lst_f&gt;</span></span>
-<span id="cb12-8"><a href="#cb12-8" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 1 riskmet… 0.2.3   riskmetric&lt;install&gt; &lt;lgl [30]&gt;  NA       &lt;error&gt;      &lt;lgl&gt;  </span></span>
-<span id="cb12-9"><a href="#cb12-9" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 2 utils    4.2.0   utils&lt;install&gt;      &lt;error&gt;     NA       &lt;error&gt;      &lt;lgl&gt;  </span></span>
-<span id="cb12-10"><a href="#cb12-10" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 3 tools    4.2.0   tools&lt;install&gt;      &lt;error&gt;     NA       12208        &lt;lgl&gt;  </span></span>
-<span id="cb12-11"><a href="#cb12-11" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; # … with 16 more variables: r_cmd_check &lt;lst_f_p_&gt;, dependencies &lt;lst_f_p_&gt;,</span></span>
-<span id="cb12-12"><a href="#cb12-12" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; #   reverse_dependencies &lt;lst_f_p_&gt;, license &lt;lst_f_p_&gt;,</span></span>
-<span id="cb12-13"><a href="#cb12-13" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; #   has_maintainer &lt;lst_f_p_&gt;, remote_checks &lt;lst_f_p_&gt;,</span></span>
-<span id="cb12-14"><a href="#cb12-14" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; #   exported_namespace &lt;lst_f_p_&gt;, has_website &lt;lst_f_p_&gt;,</span></span>
-<span id="cb12-15"><a href="#cb12-15" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; #   downloads_1yr &lt;lst_f_p_&gt;, has_news &lt;lst_f_p_&gt;, has_vignettes &lt;lst_f_p_&gt;,</span></span>
-<span id="cb12-16"><a href="#cb12-16" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; #   has_examples &lt;lst_f_p_&gt;, has_source_control &lt;lst_f_p_&gt;,</span></span>
-<span id="cb12-17"><a href="#cb12-17" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; #   has_bug_reports_url &lt;lst_f_p_&gt;, news_current &lt;lst_f_p_&gt;, …</span></span></code></pre></div>
+<div class="sourceCode" id="cb12"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb12-1"><a href="#cb12-1" tabindex="-1"></a><span class="fu">library</span>(dplyr)</span>
+<span id="cb12-2"><a href="#cb12-2" tabindex="-1"></a><span class="fu">pkg_ref</span>(<span class="fu">c</span>(<span class="st">&quot;riskmetric&quot;</span>, <span class="st">&quot;utils&quot;</span>, <span class="st">&quot;tools&quot;</span>)) <span class="sc">%&gt;%</span></span>
+<span id="cb12-3"><a href="#cb12-3" tabindex="-1"></a>  <span class="fu">as_tibble</span>() <span class="sc">%&gt;%</span></span>
+<span id="cb12-4"><a href="#cb12-4" tabindex="-1"></a>  <span class="fu">pkg_assess</span>(<span class="fu">c</span>(<span class="fu">all_assessments</span>(), assess_name_first_letter))</span>
+<span id="cb12-5"><a href="#cb12-5" tabindex="-1"></a><span class="co">#&gt; # A tibble: 3 × 23</span></span>
+<span id="cb12-6"><a href="#cb12-6" tabindex="-1"></a><span class="co">#&gt;   package    version pkg_ref             covr_coverage has_news   remote_checks</span></span>
+<span id="cb12-7"><a href="#cb12-7" tabindex="-1"></a><span class="co">#&gt;   &lt;chr&gt;      &lt;chr&gt;   &lt;lst_f_p_&gt;          &lt;lst_f_p_&gt;    &lt;lst_f_p_&gt; &lt;lst_f_p_&gt;   </span></span>
+<span id="cb12-8"><a href="#cb12-8" tabindex="-1"></a><span class="co">#&gt; 1 riskmetric 0.2.4   riskmetric&lt;install&gt; NA            1          NA           </span></span>
+<span id="cb12-9"><a href="#cb12-9" tabindex="-1"></a><span class="co">#&gt; 2 utils      4.3.0   utils&lt;install&gt;      NA            0          NA           </span></span>
+<span id="cb12-10"><a href="#cb12-10" tabindex="-1"></a><span class="co">#&gt; 3 tools      4.3.0   tools&lt;install&gt;      NA            0          NA           </span></span>
+<span id="cb12-11"><a href="#cb12-11" tabindex="-1"></a><span class="co">#&gt; # ℹ 17 more variables: news_current &lt;lst_f_p_&gt;, r_cmd_check &lt;lst_f_p_&gt;,</span></span>
+<span id="cb12-12"><a href="#cb12-12" tabindex="-1"></a><span class="co">#&gt; #   exported_namespace &lt;lst_f_p_&gt;, has_vignettes &lt;lst_f_p_&gt;,</span></span>
+<span id="cb12-13"><a href="#cb12-13" tabindex="-1"></a><span class="co">#&gt; #   export_help &lt;lst_f_p_&gt;, has_website &lt;lst_f_p_&gt;, has_maintainer &lt;lst_f_p_&gt;,</span></span>
+<span id="cb12-14"><a href="#cb12-14" tabindex="-1"></a><span class="co">#&gt; #   bugs_status &lt;lst_f_p_&gt;, size_codebase &lt;lst_f_p_&gt;,</span></span>
+<span id="cb12-15"><a href="#cb12-15" tabindex="-1"></a><span class="co">#&gt; #   has_source_control &lt;lst_f_p_&gt;, has_bug_reports_url &lt;lst_f_p_&gt;,</span></span>
+<span id="cb12-16"><a href="#cb12-16" tabindex="-1"></a><span class="co">#&gt; #   downloads_1yr &lt;lst_f_p_&gt;, reverse_dependencies &lt;lst_f_p_&gt;,</span></span>
+<span id="cb12-17"><a href="#cb12-17" tabindex="-1"></a><span class="co">#&gt; #   has_examples &lt;lst_f_p_&gt;, dependencies &lt;lst_f_p_&gt;, license &lt;lst_f_p_&gt;, …</span></span></code></pre></div>
 <p>Our scoring function will automatically get picked up and used by the
 score method.</p>
-<div class="sourceCode" id="cb13"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a><span class="fu">pkg_ref</span>(<span class="fu">c</span>(<span class="st">&quot;riskmetric&quot;</span>, <span class="st">&quot;utils&quot;</span>, <span class="st">&quot;tools&quot;</span>)) <span class="sc">%&gt;%</span></span>
-<span id="cb13-2"><a href="#cb13-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">as_tibble</span>() <span class="sc">%&gt;%</span></span>
-<span id="cb13-3"><a href="#cb13-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">pkg_assess</span>(<span class="fu">c</span>(<span class="fu">all_assessments</span>(), assess_name_first_letter)) <span class="sc">%&gt;%</span></span>
-<span id="cb13-4"><a href="#cb13-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">pkg_score</span>()</span>
-<span id="cb13-5"><a href="#cb13-5" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; # A tibble: 3 × 24</span></span>
-<span id="cb13-6"><a href="#cb13-6" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt;   package    version pkg_ref             pkg_score bugs_status covr_co…¹ size_…²</span></span>
-<span id="cb13-7"><a href="#cb13-7" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt;   &lt;chr&gt;      &lt;chr&gt;   &lt;lst_f_p_&gt;              &lt;dbl&gt; &lt;pkg_scor&gt;  &lt;pkg_sco&gt; &lt;pkg_s&gt;</span></span>
-<span id="cb13-8"><a href="#cb13-8" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 1 riskmetric 0.2.3   riskmetric&lt;install&gt;     0.498 0.3333333   NA        NA     </span></span>
-<span id="cb13-9"><a href="#cb13-9" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 2 utils      4.2.0   utils&lt;install&gt;          0.703        NA   NA        NA     </span></span>
-<span id="cb13-10"><a href="#cb13-10" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 3 tools      4.2.0   tools&lt;install&gt;          0.747        NA   NA        NA     </span></span>
-<span id="cb13-11"><a href="#cb13-11" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; # … with 17 more variables: export_help &lt;pkg_scor&gt;, r_cmd_check &lt;pkg_scor&gt;,</span></span>
-<span id="cb13-12"><a href="#cb13-12" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; #   dependencies &lt;pkg_scor&gt;, reverse_dependencies &lt;pkg_scor&gt;,</span></span>
-<span id="cb13-13"><a href="#cb13-13" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; #   license &lt;pkg_scor&gt;, has_maintainer &lt;pkg_scor&gt;, remote_checks &lt;pkg_scor&gt;,</span></span>
-<span id="cb13-14"><a href="#cb13-14" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; #   exported_namespace &lt;pkg_scor&gt;, has_website &lt;pkg_scor&gt;,</span></span>
-<span id="cb13-15"><a href="#cb13-15" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; #   downloads_1yr &lt;pkg_scor&gt;, has_news &lt;pkg_scor&gt;, has_vignettes &lt;pkg_scor&gt;,</span></span>
-<span id="cb13-16"><a href="#cb13-16" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; #   has_examples &lt;pkg_scor&gt;, has_source_control &lt;pkg_scor&gt;,</span></span>
-<span id="cb13-17"><a href="#cb13-17" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; #   has_bug_reports_url &lt;pkg_scor&gt;, news_current &lt;pkg_scor&gt;, …</span></span></code></pre></div>
+<div class="sourceCode" id="cb13"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb13-1"><a href="#cb13-1" tabindex="-1"></a><span class="fu">pkg_ref</span>(<span class="fu">c</span>(<span class="st">&quot;riskmetric&quot;</span>, <span class="st">&quot;utils&quot;</span>, <span class="st">&quot;tools&quot;</span>)) <span class="sc">%&gt;%</span></span>
+<span id="cb13-2"><a href="#cb13-2" tabindex="-1"></a>  <span class="fu">as_tibble</span>() <span class="sc">%&gt;%</span></span>
+<span id="cb13-3"><a href="#cb13-3" tabindex="-1"></a>  <span class="fu">pkg_assess</span>(<span class="fu">c</span>(<span class="fu">all_assessments</span>(), assess_name_first_letter)) <span class="sc">%&gt;%</span></span>
+<span id="cb13-4"><a href="#cb13-4" tabindex="-1"></a>  <span class="fu">pkg_score</span>()</span>
+<span id="cb13-5"><a href="#cb13-5" tabindex="-1"></a><span class="co">#&gt; # A tibble: 3 × 24</span></span>
+<span id="cb13-6"><a href="#cb13-6" tabindex="-1"></a><span class="co">#&gt;   package    version pkg_ref             pkg_score covr_coverage has_news  </span></span>
+<span id="cb13-7"><a href="#cb13-7" tabindex="-1"></a><span class="co">#&gt;   &lt;chr&gt;      &lt;chr&gt;   &lt;lst_f_p_&gt;              &lt;dbl&gt; &lt;pkg_scor&gt;    &lt;pkg_scor&gt;</span></span>
+<span id="cb13-8"><a href="#cb13-8" tabindex="-1"></a><span class="co">#&gt; 1 riskmetric 0.2.4   riskmetric&lt;install&gt;     0.506 NA            1         </span></span>
+<span id="cb13-9"><a href="#cb13-9" tabindex="-1"></a><span class="co">#&gt; 2 utils      4.3.0   utils&lt;install&gt;          0.703 NA            0         </span></span>
+<span id="cb13-10"><a href="#cb13-10" tabindex="-1"></a><span class="co">#&gt; 3 tools      4.3.0   tools&lt;install&gt;          0.748 NA            0         </span></span>
+<span id="cb13-11"><a href="#cb13-11" tabindex="-1"></a><span class="co">#&gt; # ℹ 18 more variables: remote_checks &lt;pkg_scor&gt;, news_current &lt;pkg_scor&gt;,</span></span>
+<span id="cb13-12"><a href="#cb13-12" tabindex="-1"></a><span class="co">#&gt; #   r_cmd_check &lt;pkg_scor&gt;, exported_namespace &lt;pkg_scor&gt;,</span></span>
+<span id="cb13-13"><a href="#cb13-13" tabindex="-1"></a><span class="co">#&gt; #   has_vignettes &lt;pkg_scor&gt;, export_help &lt;pkg_scor&gt;, has_website &lt;pkg_scor&gt;,</span></span>
+<span id="cb13-14"><a href="#cb13-14" tabindex="-1"></a><span class="co">#&gt; #   has_maintainer &lt;pkg_scor&gt;, bugs_status &lt;pkg_scor&gt;,</span></span>
+<span id="cb13-15"><a href="#cb13-15" tabindex="-1"></a><span class="co">#&gt; #   size_codebase &lt;pkg_scor&gt;, has_source_control &lt;pkg_scor&gt;,</span></span>
+<span id="cb13-16"><a href="#cb13-16" tabindex="-1"></a><span class="co">#&gt; #   has_bug_reports_url &lt;pkg_scor&gt;, downloads_1yr &lt;pkg_scor&gt;,</span></span>
+<span id="cb13-17"><a href="#cb13-17" tabindex="-1"></a><span class="co">#&gt; #   reverse_dependencies &lt;pkg_scor&gt;, has_examples &lt;pkg_scor&gt;, …</span></span></code></pre></div>
 <p>and we can define our own summarizing weights by passing a named list
 to <code>pkg_score</code>.</p>
-<div class="sourceCode" id="cb14"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a><span class="fu">pkg_ref</span>(<span class="fu">c</span>(<span class="st">&quot;riskmetric&quot;</span>, <span class="st">&quot;utils&quot;</span>, <span class="st">&quot;tools&quot;</span>)) <span class="sc">%&gt;%</span></span>
-<span id="cb14-2"><a href="#cb14-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">as_tibble</span>() <span class="sc">%&gt;%</span></span>
-<span id="cb14-3"><a href="#cb14-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">pkg_assess</span>(<span class="fu">c</span>(<span class="fu">all_assessments</span>(), assess_name_first_letter)) <span class="sc">%&gt;%</span></span>
-<span id="cb14-4"><a href="#cb14-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">pkg_score</span>(<span class="at">weights =</span> <span class="fu">c</span>(<span class="at">has_news =</span> <span class="dv">1</span>, <span class="at">name_first_letter =</span> <span class="dv">1</span>))</span>
-<span id="cb14-5"><a href="#cb14-5" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; # A tibble: 3 × 24</span></span>
-<span id="cb14-6"><a href="#cb14-6" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt;   package    version pkg_ref             pkg_score bugs_status covr_co…¹ size_…²</span></span>
-<span id="cb14-7"><a href="#cb14-7" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt;   &lt;chr&gt;      &lt;chr&gt;   &lt;lst_f_p_&gt;              &lt;dbl&gt; &lt;pkg_scor&gt;  &lt;pkg_sco&gt; &lt;pkg_s&gt;</span></span>
-<span id="cb14-8"><a href="#cb14-8" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 1 riskmetric 0.2.3   riskmetric&lt;install&gt;         0 0.3333333   NA        NA     </span></span>
-<span id="cb14-9"><a href="#cb14-9" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 2 utils      4.2.0   utils&lt;install&gt;              1        NA   NA        NA     </span></span>
-<span id="cb14-10"><a href="#cb14-10" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 3 tools      4.2.0   tools&lt;install&gt;              1        NA   NA        NA     </span></span>
-<span id="cb14-11"><a href="#cb14-11" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; # … with 17 more variables: export_help &lt;pkg_scor&gt;, r_cmd_check &lt;pkg_scor&gt;,</span></span>
-<span id="cb14-12"><a href="#cb14-12" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; #   dependencies &lt;pkg_scor&gt;, reverse_dependencies &lt;pkg_scor&gt;,</span></span>
-<span id="cb14-13"><a href="#cb14-13" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; #   license &lt;pkg_scor&gt;, has_maintainer &lt;pkg_scor&gt;, remote_checks &lt;pkg_scor&gt;,</span></span>
-<span id="cb14-14"><a href="#cb14-14" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; #   exported_namespace &lt;pkg_scor&gt;, has_website &lt;pkg_scor&gt;,</span></span>
-<span id="cb14-15"><a href="#cb14-15" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; #   downloads_1yr &lt;pkg_scor&gt;, has_news &lt;pkg_scor&gt;, has_vignettes &lt;pkg_scor&gt;,</span></span>
-<span id="cb14-16"><a href="#cb14-16" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; #   has_examples &lt;pkg_scor&gt;, has_source_control &lt;pkg_scor&gt;,</span></span>
-<span id="cb14-17"><a href="#cb14-17" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; #   has_bug_reports_url &lt;pkg_scor&gt;, news_current &lt;pkg_scor&gt;, …</span></span></code></pre></div>
+<div class="sourceCode" id="cb14"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb14-1"><a href="#cb14-1" tabindex="-1"></a><span class="fu">pkg_ref</span>(<span class="fu">c</span>(<span class="st">&quot;riskmetric&quot;</span>, <span class="st">&quot;utils&quot;</span>, <span class="st">&quot;tools&quot;</span>)) <span class="sc">%&gt;%</span></span>
+<span id="cb14-2"><a href="#cb14-2" tabindex="-1"></a>  <span class="fu">as_tibble</span>() <span class="sc">%&gt;%</span></span>
+<span id="cb14-3"><a href="#cb14-3" tabindex="-1"></a>  <span class="fu">pkg_assess</span>(<span class="fu">c</span>(<span class="fu">all_assessments</span>(), assess_name_first_letter)) <span class="sc">%&gt;%</span></span>
+<span id="cb14-4"><a href="#cb14-4" tabindex="-1"></a>  <span class="fu">pkg_score</span>(<span class="at">weights =</span> <span class="fu">c</span>(<span class="at">has_news =</span> <span class="dv">1</span>, <span class="at">name_first_letter =</span> <span class="dv">1</span>))</span>
+<span id="cb14-5"><a href="#cb14-5" tabindex="-1"></a><span class="co">#&gt; # A tibble: 3 × 24</span></span>
+<span id="cb14-6"><a href="#cb14-6" tabindex="-1"></a><span class="co">#&gt;   package    version pkg_ref             pkg_score covr_coverage has_news  </span></span>
+<span id="cb14-7"><a href="#cb14-7" tabindex="-1"></a><span class="co">#&gt;   &lt;chr&gt;      &lt;chr&gt;   &lt;lst_f_p_&gt;              &lt;dbl&gt; &lt;pkg_scor&gt;    &lt;pkg_scor&gt;</span></span>
+<span id="cb14-8"><a href="#cb14-8" tabindex="-1"></a><span class="co">#&gt; 1 riskmetric 0.2.4   riskmetric&lt;install&gt;         0 NA            1         </span></span>
+<span id="cb14-9"><a href="#cb14-9" tabindex="-1"></a><span class="co">#&gt; 2 utils      4.3.0   utils&lt;install&gt;              1 NA            0         </span></span>
+<span id="cb14-10"><a href="#cb14-10" tabindex="-1"></a><span class="co">#&gt; 3 tools      4.3.0   tools&lt;install&gt;              1 NA            0         </span></span>
+<span id="cb14-11"><a href="#cb14-11" tabindex="-1"></a><span class="co">#&gt; # ℹ 18 more variables: remote_checks &lt;pkg_scor&gt;, news_current &lt;pkg_scor&gt;,</span></span>
+<span id="cb14-12"><a href="#cb14-12" tabindex="-1"></a><span class="co">#&gt; #   r_cmd_check &lt;pkg_scor&gt;, exported_namespace &lt;pkg_scor&gt;,</span></span>
+<span id="cb14-13"><a href="#cb14-13" tabindex="-1"></a><span class="co">#&gt; #   has_vignettes &lt;pkg_scor&gt;, export_help &lt;pkg_scor&gt;, has_website &lt;pkg_scor&gt;,</span></span>
+<span id="cb14-14"><a href="#cb14-14" tabindex="-1"></a><span class="co">#&gt; #   has_maintainer &lt;pkg_scor&gt;, bugs_status &lt;pkg_scor&gt;,</span></span>
+<span id="cb14-15"><a href="#cb14-15" tabindex="-1"></a><span class="co">#&gt; #   size_codebase &lt;pkg_scor&gt;, has_source_control &lt;pkg_scor&gt;,</span></span>
+<span id="cb14-16"><a href="#cb14-16" tabindex="-1"></a><span class="co">#&gt; #   has_bug_reports_url &lt;pkg_scor&gt;, downloads_1yr &lt;pkg_scor&gt;,</span></span>
+<span id="cb14-17"><a href="#cb14-17" tabindex="-1"></a><span class="co">#&gt; #   reverse_dependencies &lt;pkg_scor&gt;, has_examples &lt;pkg_scor&gt;, …</span></span></code></pre></div>
 <p>Of course you can do any downstream processing of the resulting
 <code>tibble</code> if you’d like to further fine-tune your
 summarization using a nonlinear function.</p>
