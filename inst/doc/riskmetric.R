@@ -15,9 +15,9 @@ knitr::opts_chunk$set(
 knitr::include_graphics("../man/figures/core-workflow.svg")
 
 ## ----eval = FALSE-------------------------------------------------------------
-#  library(riskmetric)
-#  riskmetric_pkg_ref <- pkg_ref("riskmetric")
-#  print(riskmetric_pkg_ref)
+# library(riskmetric)
+# riskmetric_pkg_ref <- pkg_ref("riskmetric")
+# print(riskmetric_pkg_ref)
 
 ## ----echo = FALSE, warning = FALSE--------------------------------------------
 rver <- gsub("\\.\\d+$", "", paste0(R.version$major, ".", R.version$minor))
@@ -34,8 +34,8 @@ invisible(riskmetric:::bare_env(package, {
 package
 
 ## ----eval = FALSE-------------------------------------------------------------
-#  riskmetric_export_help_metric <- assess_export_help(riskmetric_pkg_ref)
-#  print(riskmetric_export_help_metric[1:5])
+# riskmetric_export_help_metric <- assess_export_help(riskmetric_pkg_ref)
+# print(riskmetric_export_help_metric[1:5])
 
 ## ----echo = FALSE-------------------------------------------------------------
 rver <- gsub("\\.\\d+$", "", paste0(R.version$major, ".", R.version$minor))
@@ -53,19 +53,19 @@ invisible(riskmetric:::bare_env(package, {
 }))
 
 ## ----eval = FALSE-------------------------------------------------------------
-#  riskmetric_pkg_ref
+# riskmetric_pkg_ref
 
 ## ----echo = FALSE-------------------------------------------------------------
 package
 
 ## ----eval = FALSE-------------------------------------------------------------
-#  pkg_assess(riskmetric_pkg_ref)
+# pkg_assess(riskmetric_pkg_ref)
 
 ## ----echo = FALSE-------------------------------------------------------------
 pkg_assess(pkg_ref("riskmetric"))
 
 ## ----eval = FALSE-------------------------------------------------------------
-#  pkg_assess(as_tibble(riskmetric_pkg_ref))
+# pkg_assess(as_tibble(riskmetric_pkg_ref))
 
 ## ----echo = FALSE-------------------------------------------------------------
 pkg_assess(as_tibble(pkg_ref("riskmetric")))

@@ -104,7 +104,7 @@ get_package_dependencies <- function(name, repo){
   ap <- available.packages(repos = repo)
   deps <- ap[rownames(ap)==name, c("LinkingTo","Imports","Depends")]
   deps <- deps[!is.na(deps)]
-  deps <- sapply(strsplit(deps, ","), trimws)
+  deps <- lapply(strsplit(deps, ","), trimws)
   deps <- data.frame(package=unlist(deps),
                      type=rep(names(deps), sapply(deps, length)),
                      stringsAsFactors = FALSE,
@@ -121,7 +121,7 @@ get_package_dependencies <- function(name, repo){
 parse_dcf_dependencies <- function(path){
   dcf <- read.dcf(file.path(path, "DESCRIPTION"), all=TRUE)
   dcf <- dcf[colnames(dcf) %in% c("LinkingTo","Imports", "Depends")]
-  dcf <- sapply(dcf, strsplit, strsplit, split=",")
+  dcf <- sapply(dcf, strsplit, split=",")
   dcf <- lapply(dcf, trimws)
   deps <- data.frame(package=unlist(dcf),
                      type=rep(names(dcf), sapply(dcf, length)),
