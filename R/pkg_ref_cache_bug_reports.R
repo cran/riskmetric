@@ -9,7 +9,7 @@ pkg_ref_cache.bug_reports <- function(x, ...) {
   UseMethod("pkg_ref_cache.bug_reports")
 }
 
-
+#' @keywords internal
 pkg_ref_cache.bug_reports.default <- function(x, ...) {
   scrape_bug_reports(x, ...)
 }
@@ -35,13 +35,14 @@ bug_report_metadata <- function(bug_reports_data, x) {
 
 
 # Helper for scraping bug reports depending on url host name
+#' @keywords internal
 scrape_bug_reports <- function(x, ...) {
   disp_class <- x$bug_reports_host %||% "NULL"
   UseMethod("scrape_bug_reports", structure(list(), class = disp_class))
 }
 
 
-
+#' @keywords internal
 scrape_bug_reports.default <- function(x, ...) {
   if (is.null(x$bug_reports_host) || length(x$bug_reports_host) == 0L)
     stop("package DESCRIPTION does not have a BugReports field")

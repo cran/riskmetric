@@ -9,14 +9,14 @@ pkg_ref_cache.release_date <- function(x, name, ...) {
   UseMethod("pkg_ref_cache.release_date")
 }
 
-
+#' @keywords internal
 pkg_ref_cache.release_date.pkg_remote <- function(x, name, ...) {
   release_xpath <- "//td[.='Published:']/following::td[1]"
   date <- xml2::xml_text(xml2::xml_find_all(x$web_html, release_xpath))
   date
 }
 
-
+#' @keywords internal
 pkg_ref_cache.release_date.pkg_install <- function(x, name, ...) {
 
   if (!"Date" %in% colnames(x$description)) return(NA)
@@ -24,5 +24,5 @@ pkg_ref_cache.release_date.pkg_install <- function(x, name, ...) {
 }
 
 
-
+#' @keywords internal
 pkg_ref_cache.release_date.pkg_source <- pkg_ref_cache.release_date.pkg_install

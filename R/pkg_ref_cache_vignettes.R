@@ -9,19 +9,17 @@ pkg_ref_cache.vignettes <- function(x, name, ...) {
   UseMethod("pkg_ref_cache.vignettes")
 }
 
-
-
+#' @keywords internal
 pkg_ref_cache.vignettes.pkg_remote <- function(x, name, ...) {
   vignettes_from_html(x)
 }
 
-
+#' @keywords internal
 pkg_ref_cache.vignettes.pkg_install <- function(x, name, ...) {
   vignettes_from_dir(system.file(package = x$name))
 }
 
-
-
+#' @keywords internal
 pkg_ref_cache.vignettes.pkg_source <- function(x, name, ...) {
   vignettes_from_dir(x$path)
 }

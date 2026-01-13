@@ -34,25 +34,28 @@ metric_score.default <- function(x, ...) {
   0L
 }
 
-
+#' @keywords internal
 metric_score_condition <- function(x, ...) {
   UseMethod("metric_score_condition")
 }
 
+#' @keywords internal
 metric_score_condition.pkg_metric_error <- function(x, ...,
     error_handler = score_error_default) {
   error_handler(x, ...)
 }
 
-
+#' @keywords internal
 metric_score_condition.pkg_metric_na <- function(x, ...) {
   structure(NA_real_, class = c("pkg_score_na", "numeric"))
 }
 
+#' @keywords internal
 metric_score_condition.pkg_metric_error <- function(x, ...) {
   structure(NA_real_, class = c("pkg_score_error", "numeric"))
 }
 
+#' @keywords internal
 metric_score_condition.pkg_metric_todo <- function(x, ...) {
   structure(NA_real_, class = c("pkg_score_todo", "numeric"))
 }

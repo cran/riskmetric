@@ -9,10 +9,12 @@ pkg_ref_cache.examples <- function(x, name, ...) {
   UseMethod("pkg_ref_cache.examples")
 }
 
+#' @keywords internal
 pkg_ref_cache.examples.pkg_install <- function(x, name, ...) {
   examples_from_pkg(x$name)
 }
 
+#' @keywords internal
 pkg_ref_cache.examples.pkg_source <- function(x, name, ...) {
   examples_from_dir(x$path, x$name)
 }

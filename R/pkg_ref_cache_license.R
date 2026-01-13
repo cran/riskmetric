@@ -9,8 +9,7 @@ pkg_ref_cache.license <- function(x, ...) {
   UseMethod("pkg_ref_cache.license")
 }
 
-
-
+#' @keywords internal
 pkg_ref_cache.license.default <- function(x, ...) {
   if ("License" %in% colnames(x$description)) unname(x$description[,"License"])
   else NA_character_

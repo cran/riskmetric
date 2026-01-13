@@ -15,20 +15,18 @@ assess_last_30_bugs_status <- function(x, ...) {
 attributes(assess_last_30_bugs_status)$column_name <- "bugs_status"
 attributes(assess_last_30_bugs_status)$label <- "vector indicating whether BugReports status is closed"
 
-
-
+#' @keywords internal
 bug_reports_status <- function(x, ...) {
   UseMethod("bug_reports_status", x$bug_reports)
 }
 
-
-
+#' @keywords internal
 bug_reports_status.github_bug_report <- function(x, ...) {
   vapply(x$bug_reports, "[[", character(1L), "state") == "closed"
 }
 
 
-
+#' @keywords internal
 bug_reports_status.gitlab_bug_report <- function(x, ...) {
   vapply(x$bug_reports, "[[", character(1L), "state") == "closed"
 }
@@ -46,5 +44,5 @@ metric_score.pkg_metric_last_30_bugs_status <- function(x, ...) {
   mean(x, na.rm = TRUE)
 }
 
-attributes(metric_score.pkg_metric_last_30_bugs_status)$label <- 
+attributes(metric_score.pkg_metric_last_30_bugs_status)$label <-
   "The fraction of the last 30 bugs which have already been closed."
