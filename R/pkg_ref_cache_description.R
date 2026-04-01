@@ -11,13 +11,13 @@ pkg_ref_cache.description <- function(x, name, ...) {
 }
 
 
-#' @exportS3Method
+
 pkg_ref_cache.description.pkg_install <- function(x, name, ...) {
   read.dcf(file.path(x$path, "DESCRIPTION"))
 }
 
 
-#' @exportS3Method
+
 pkg_ref_cache.description.pkg_source <- function(x, name, ...) {
   read.dcf(file.path(x$path, "DESCRIPTION"))
 }

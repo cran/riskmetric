@@ -12,7 +12,7 @@
 
 <meta name="author" content="R Validation Hub" />
 
-<meta name="date" content="2026-01-13" />
+<meta name="date" content="2026-03-31" />
 
 <title>Get Started</title>
 
@@ -340,7 +340,7 @@ code > span.er { color: #a61717; background-color: #e3d2d2; }
 
 <h1 class="title toc-ignore">Get Started</h1>
 <h4 class="author">R Validation Hub</h4>
-<h4 class="date">2026-01-13</h4>
+<h4 class="date">2026-03-31</h4>
 
 
 <div id="TOC">
@@ -469,13 +469,13 @@ metadata as it’s collected in the various risk assessments.</p>
 <div class="sourceCode" id="cb1"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" tabindex="-1"></a><span class="fu">library</span>(riskmetric)</span>
 <span id="cb1-2"><a href="#cb1-2" tabindex="-1"></a>riskmetric_pkg_ref <span class="ot">&lt;-</span> <span class="fu">pkg_ref</span>(<span class="st">&quot;riskmetric&quot;</span>)</span>
 <span id="cb1-3"><a href="#cb1-3" tabindex="-1"></a><span class="fu">print</span>(riskmetric_pkg_ref)</span></code></pre></div>
-<pre><code>#&gt; &lt;pkg_install, pkg_ref&gt; riskmetric v0.2.6
+<pre><code>#&gt; &lt;pkg_install, pkg_ref&gt; riskmetric v0.2.7
 #&gt; $path
 #&gt;   [1] &quot;/home/user/username/R/4.4/Resources/library/riskmetric&quot;
 #&gt; $source
 #&gt;   [1] &quot;pkg_install&quot;
 #&gt; $version
-#&gt;   [1] &#39;0.2.6&#39;
+#&gt;   [1] &#39;0.2.7&#39;
 #&gt; $name
 #&gt;   [1] &quot;riskmetric&quot;
 #&gt; $bug_reports...
@@ -544,7 +544,7 @@ dispatching to an appropriate scoring method.</p>
 the side-effect of mutating our <code>riskmetric_pkg_ref</code>
 object.</p>
 <div class="sourceCode" id="cb5"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" tabindex="-1"></a>riskmetric_pkg_ref</span></code></pre></div>
-<pre><code>#&gt; &lt;pkg_install, pkg_ref&gt; riskmetric v0.2.6
+<pre><code>#&gt; &lt;pkg_install, pkg_ref&gt; riskmetric v0.2.7
 #&gt; $help_aliases
 #&gt;              riskmetric-package                          %||%
 #&gt;                    &quot;riskmetric&quot;            &quot;if_not_null_else&quot;
@@ -558,7 +558,7 @@ object.</p>
 #&gt; $source
 #&gt;   [1] &quot;pkg_install&quot;
 #&gt; $version
-#&gt;   [1] &#39;0.2.6&#39;
+#&gt;   [1] &#39;0.2.7&#39;
 #&gt; $name
 #&gt;   [1] &quot;riskmetric&quot;
 #&gt; $bug_reports...
@@ -634,7 +634,7 @@ namespace.</p>
 #&gt; [1] &quot;Number of OS flavors that passed/warned/errored on R CMD check&quot;
 #&gt; 
 #&gt; $news_current
-#&gt; [1] TRUE
+#&gt; [1] FALSE
 #&gt; attr(,&quot;class&quot;)
 #&gt; [1] &quot;pkg_metric_news_current&quot; &quot;pkg_metric&quot;             
 #&gt; [3] &quot;logical&quot;                
@@ -718,9 +718,9 @@ namespace.</p>
 #&gt; [1] &quot;Eli Miller &lt;eli.miller@atorusresearch.com&gt;&quot;
 #&gt; 
 #&gt; $bugs_status
-#&gt;  [1]  TRUE FALSE  TRUE  TRUE  TRUE  TRUE  TRUE FALSE FALSE  TRUE FALSE  TRUE
-#&gt; [13]  TRUE  TRUE  TRUE  TRUE  TRUE FALSE FALSE FALSE FALSE  TRUE FALSE FALSE
-#&gt; [25]  TRUE FALSE FALSE  TRUE  TRUE  TRUE
+#&gt;  [1] FALSE  TRUE  TRUE FALSE  TRUE FALSE  TRUE  TRUE  TRUE  TRUE  TRUE FALSE
+#&gt; [13] FALSE  TRUE FALSE  TRUE  TRUE  TRUE  TRUE  TRUE  TRUE FALSE FALSE FALSE
+#&gt; [25] FALSE  TRUE FALSE FALSE  TRUE FALSE
 #&gt; 
 #&gt; $size_codebase
 #&gt; &lt;simpleError in attachNamespace(x$name): namespace is already attached&gt;
@@ -737,7 +737,7 @@ namespace.</p>
 #&gt; [1] &quot;presence of a bug reports url in repository&quot;
 #&gt; 
 #&gt; $downloads_1yr
-#&gt; [1] 5142
+#&gt; [1] 6876
 #&gt; 
 #&gt; $reverse_dependencies
 #&gt; character(0)
@@ -780,7 +780,7 @@ to sort through when assessing a package.</p>
 <pre><code>#&gt; # A tibble: 1 × 22
 #&gt;   package    version pkg_ref             covr_coverage has_news   remote_checks
 #&gt;   &lt;chr&gt;      &lt;chr&gt;   &lt;lst_f_p_&gt;          &lt;lst_f_p_&gt;    &lt;lst_f_p_&gt; &lt;lst_f_p_&gt;   
-#&gt; 1 riskmetric 0.2.6   riskmetric&lt;install&gt; NA            1          NA           
+#&gt; 1 riskmetric 0.2.7   riskmetric&lt;install&gt; NA            1          NA           
 #&gt; # ℹ 16 more variables: news_current &lt;lst_f_p_&gt;, r_cmd_check &lt;lst_f_p_&gt;,
 #&gt; #   exported_namespace &lt;lst_f_p_&gt;, has_vignettes &lt;lst_f_p_&gt;,
 #&gt; #   export_help &lt;lst_f_p_&gt;, has_website &lt;lst_f_p_&gt;, has_maintainer &lt;lst_f_p_&gt;,
@@ -807,7 +807,7 @@ to a <code>pkg_ref</code> <code>tibble</code>, providing a new
 <span id="cb12-2"><a href="#cb12-2" tabindex="-1"></a><span class="co">#&gt; # A tibble: 1 × 23</span></span>
 <span id="cb12-3"><a href="#cb12-3" tabindex="-1"></a><span class="co">#&gt;   package    version pkg_ref             pkg_score covr_coverage has_news  </span></span>
 <span id="cb12-4"><a href="#cb12-4" tabindex="-1"></a><span class="co">#&gt;   &lt;chr&gt;      &lt;chr&gt;   &lt;lst_f_p_&gt;              &lt;dbl&gt; &lt;pkg_scor&gt;    &lt;pkg_scor&gt;</span></span>
-<span id="cb12-5"><a href="#cb12-5" tabindex="-1"></a><span class="co">#&gt; 1 riskmetric 0.2.6   riskmetric&lt;install&gt;     0.509 NA            1         </span></span>
+<span id="cb12-5"><a href="#cb12-5" tabindex="-1"></a><span class="co">#&gt; 1 riskmetric 0.2.7   riskmetric&lt;install&gt;     0.563 NA            1         </span></span>
 <span id="cb12-6"><a href="#cb12-6" tabindex="-1"></a><span class="co">#&gt; # ℹ 17 more variables: remote_checks &lt;pkg_scor&gt;, news_current &lt;pkg_scor&gt;,</span></span>
 <span id="cb12-7"><a href="#cb12-7" tabindex="-1"></a><span class="co">#&gt; #   r_cmd_check &lt;pkg_scor&gt;, exported_namespace &lt;pkg_scor&gt;,</span></span>
 <span id="cb12-8"><a href="#cb12-8" tabindex="-1"></a><span class="co">#&gt; #   has_vignettes &lt;pkg_scor&gt;, export_help &lt;pkg_scor&gt;, has_website &lt;pkg_scor&gt;,</span></span>
@@ -854,7 +854,7 @@ cohort of packages at once.</p>
 <span id="cb14-4"><a href="#cb14-4" tabindex="-1"></a><span class="co">#&gt; # A tibble: 3 × 23</span></span>
 <span id="cb14-5"><a href="#cb14-5" tabindex="-1"></a><span class="co">#&gt;   package    version pkg_ref             pkg_score covr_coverage has_news  </span></span>
 <span id="cb14-6"><a href="#cb14-6" tabindex="-1"></a><span class="co">#&gt;   &lt;chr&gt;      &lt;chr&gt;   &lt;lst_f_p_&gt;              &lt;dbl&gt; &lt;pkg_scor&gt;    &lt;pkg_scor&gt;</span></span>
-<span id="cb14-7"><a href="#cb14-7" tabindex="-1"></a><span class="co">#&gt; 1 riskmetric 0.2.6   riskmetric&lt;install&gt;     0.509 NA            1         </span></span>
+<span id="cb14-7"><a href="#cb14-7" tabindex="-1"></a><span class="co">#&gt; 1 riskmetric 0.2.7   riskmetric&lt;install&gt;     0.563 NA            1         </span></span>
 <span id="cb14-8"><a href="#cb14-8" tabindex="-1"></a><span class="co">#&gt; 2 utils      4.4.1   utils&lt;install&gt;          0.687 NA            0         </span></span>
 <span id="cb14-9"><a href="#cb14-9" tabindex="-1"></a><span class="co">#&gt; 3 tools      4.4.1   tools&lt;install&gt;          0.734 NA            0         </span></span>
 <span id="cb14-10"><a href="#cb14-10" tabindex="-1"></a><span class="co">#&gt; # ℹ 17 more variables: remote_checks &lt;pkg_scor&gt;, news_current &lt;pkg_scor&gt;,</span></span>
@@ -872,7 +872,7 @@ using <code>summarize_scores</code>.</p>
 <span id="cb15-2"><a href="#cb15-2" tabindex="-1"></a>  <span class="fu">pkg_assess</span>() <span class="sc">%&gt;%</span></span>
 <span id="cb15-3"><a href="#cb15-3" tabindex="-1"></a>  <span class="fu">pkg_score</span>() <span class="sc">%&gt;%</span></span>
 <span id="cb15-4"><a href="#cb15-4" tabindex="-1"></a>  <span class="fu">summarize_scores</span>()</span>
-<span id="cb15-5"><a href="#cb15-5" tabindex="-1"></a><span class="co">#&gt; [1] 0.5092112 0.6870599 0.7344887</span></span></code></pre></div>
+<span id="cb15-5"><a href="#cb15-5" tabindex="-1"></a><span class="co">#&gt; [1] 0.5630347 0.6870599 0.7344886</span></span></code></pre></div>
 </div>
 </div>
 <div id="how-you-can-help" class="section level1">

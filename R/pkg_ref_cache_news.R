@@ -27,12 +27,14 @@ pkg_ref_cache.news.pkg_remote <- function(x, name, ...) {
     messages = "default")
 }
 
-#' @keywords internal
+
+
 pkg_ref_cache.news.pkg_install <- function(x, name, ...) {
   news_from_dir(system.file(package = x$name))
 }
 
-#' @keywords internal
+
+
 pkg_ref_cache.news.pkg_source <- function(x, name, ...) {
   news_from_dir(x$path)
 }

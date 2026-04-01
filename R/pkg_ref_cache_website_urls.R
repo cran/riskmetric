@@ -9,7 +9,8 @@ pkg_ref_cache.website_urls <- function(x, name, ...) {
   UseMethod("pkg_ref_cache.website_urls")
 }
 
-#' @keywords internal
+
+
 pkg_ref_cache.website_urls.pkg_remote <- function(x, name, ...) {
   url_xpath <- "//td[.='URL:']/following::td[1]/a"
   url  <- xml2::xml_text(xml2::xml_find_all(x$web_html, url_xpath))
@@ -17,7 +18,8 @@ pkg_ref_cache.website_urls.pkg_remote <- function(x, name, ...) {
   url
 }
 
-#' @keywords internal
+
+
 pkg_ref_cache.website_urls.default <- function(x, name, ...) {
   if (!"URL" %in% colnames(x$description)) return(character(0L))
   trimws(strsplit(x$description[,"URL"], ",")[[1]])

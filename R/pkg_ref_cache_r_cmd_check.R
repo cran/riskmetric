@@ -9,7 +9,6 @@ pkg_ref_cache.r_cmd_check <- function(x, ...) {
   UseMethod("pkg_ref_cache.r_cmd_check")
 }
 
-#' @keywords internal
 pkg_ref_cache.r_cmd_check.default <- function (x, ...) {
   return(NA)
 }

@@ -35,8 +35,8 @@ assess_name_first_letter.pkg_ref <- function(x, ...) {
 print_riskmetric_function(c("pkg_ref_cache.description", "pkg_ref_cache.description.pkg_install"))
 
 ## ----eval = FALSE-------------------------------------------------------------
-#  library(riskmetric)
-#  package <- pkg_ref("riskmetric")
+# library(riskmetric)
+# package <- pkg_ref("riskmetric")
 
 ## ----echo = FALSE-------------------------------------------------------------
 package_real <- pkg_ref("riskmetric")
@@ -54,7 +54,7 @@ invisible(riskmetric:::bare_env(package, {
 package
 
 ## ----eval = FALSE-------------------------------------------------------------
-#  package$description
+# package$description
 
 ## -----------------------------------------------------------------------------
 pkg_ref_cache.name_first_letter <- function(x, name, ...) {

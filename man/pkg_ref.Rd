@@ -71,25 +71,25 @@ This can be useful when you are scoring the most recent version present on a
 repository, or testing a specific library.
 
 \describe{
-\item{\strong{\code{pkg_ref}}}{ A default class for general metadata
-collection.}
-  \describe{
-  \item{\strong{\code{pkg_source}}}{ A reference to a source code directory.}
+  \item{\strong{\code{pkg_ref}}}{ A default class for general metadata
+    collection.}
+  \item{\strong{\code{pkg_source}}}{ A reference to a source code
+    directory.}
   \item{\strong{\code{pkg_install}}}{ A reference to a package installation
-  location in a package library. A specific library can be passed by passing
-  the path to the library as the parameter `lib.loc`}
+    location in a package library. A specific library can be passed by
+    passing the path to the library as the parameter `lib.loc`}
   \item{\strong{\code{pkg_remote}}}{ A reference to package metadata on a
-  remote server.}
+    remote server.
     \describe{
-    \item{\strong{\code{pkg_cran_remote}}}{ A reference to package
-    information pulled from the CRAN repository.}
-    \item{\strong{\code{pkg_bioc_remote}}}{ A reference to package
-    information pulled from the Bioconductor repository.}
-    \item{\strong{\code{pkg_git_remote}}}{ A reference to a package source
-    code git repository. (not yet implemented)}
+      \item{\strong{\code{pkg_cran_remote}}}{ A reference to package
+      information pulled from the CRAN repository.}
+      \item{\strong{\code{pkg_bioc_remote}}}{ A reference to package
+      information pulled from the Bioconductor repository.}
+      \item{\strong{\code{pkg_git_remote}}}{ A reference to a package source
+      code git repository. (not yet implemented)}
     }
   }
-  }
+}
 }
 \section{Package Cohorts}{
 
