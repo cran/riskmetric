@@ -1,7 +1,7 @@
-f0fc430acd4027e7c47009e57cefc724 *DESCRIPTION
+a10191a2f6c856894b94b77f75e11d00 *DESCRIPTION
 4b2a6bb3374e3412df208a37f3280a9e *LICENSE
 e800b82357e665133bb3d35e2751053f *NAMESPACE
-403eeb0efaea55bce73a44207f3df847 *NEWS.md
+3186870f68ff32f4c58dc0ae079018bd *NEWS.md
 938daf703beb2364a55332db314664a0 *R/assess_covr_coverage.R
 e6afc0aa5b2981ea0fe20748da9b7f69 *R/assess_dependencies.R
 9748ff740af49914882f77b5677ec038 *R/assess_downloads.R
@@ -73,14 +73,14 @@ f0978b6f56ae9b5e632c6fb1bd6738e0 *R/vctrs_list_of_pkg_metric.R
 48b65fd72fb03506f97bc8e2b18f3177 *R/vctrs_list_of_pkg_ref.R
 c54e87f1a7f6c6a03b6fa64f3bad5639 *R/zzz.R
 c8bba64785a05bde3f5a4bae40f5c4ae *README.md
-7e646e9fc5fd7a3bad9ae05bd727141b *build/vignette.rds
+0108af67a78d937bf089cb2cd7243abf *build/vignette.rds
 c9b52fe80c70d04eaa10ebd380d90a08 *inst/assets/core-workflow.svg
 79be08c5adabef37fa1ecfa055b55d99 *inst/doc/extending-riskmetric.R
 28fb4887938f725de9409a2cd40edd17 *inst/doc/extending-riskmetric.Rmd
-fedd21d1175a28b23dbd88b49d4100d6 *inst/doc/extending-riskmetric.html
+d7e54351cbf80c3dfc504ba52d18e695 *inst/doc/extending-riskmetric.html
 feef4604eaf7f6bc7b49e78d448e0319 *inst/doc/riskmetric.R
 b3decb9930e32849b4f002ee4855c56e *inst/doc/riskmetric.Rmd
-9d26e8058aec136ee3991a0d19bc883c *inst/doc/riskmetric.html
+0917022e32fb78c7e001513ba50f8984 *inst/doc/riskmetric.html
 a650fa7d4fd1670a9107ac779324ba43 *man/all_assessments.Rd
 355e2dcac2274a534ab326ae2f5f08d1 *man/allow_mutation.Rd
 e2099e72619a9cf5d4115505bc1c753a *man/as_pkg_metric.Rd
